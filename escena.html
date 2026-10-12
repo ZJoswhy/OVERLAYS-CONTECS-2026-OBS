@@ -1,0 +1,208 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CONTECS 2026 · Escena</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+  .top{position:absolute;top:56px;left:80px;right:80px;display:flex;justify-content:space-between;align-items:center;z-index:2}
+  .centro{position:absolute;left:80px;right:80px;top:180px;bottom:120px;display:flex;flex-direction:column;justify-content:center;align-items:center;text-align:center;z-index:2}
+  .kicker{font-size:30px;font-weight:800;letter-spacing:.32em;color:var(--verde-400);text-transform:uppercase}
+  .titulo{font-size:150px;font-weight:900;line-height:1.02;margin:22px 0 10px;text-transform:uppercase;letter-spacing:.01em;text-shadow:0 10px 40px rgba(0,0,0,.4)}
+  .titulo .w{display:inline-block;opacity:0;transform:translateY(80px) rotate(4deg);animation:sube .9s cubic-bezier(.2,.9,.25,1.2) forwards}
+  .titulo .w.acento{color:var(--lima)}
+  @keyframes sube{to{opacity:1;transform:none}}
+  .linea{height:8px;width:0;background:linear-gradient(90deg,var(--verde-400),var(--lima));border-radius:8px;margin:18px auto 26px;animation:linea 1s .6s cubic-bezier(.2,.8,.2,1) forwards}
+  @keyframes linea{to{width:360px}}
+  .sub{font-size:38px;font-weight:600;color:var(--gris);max-width:1400px}
+  .extra{margin-top:48px}
+  .agenda-on .extra{margin-top:24px}
+
+  /* Cuenta regresiva */
+  .cuenta{display:flex;gap:26px;justify-content:center}
+  .cuenta .caja{min-width:220px;padding:22px 28px;border-radius:24px;background:rgba(255,255,255,.06);border:2px solid rgba(34,197,94,.45);backdrop-filter:blur(6px)}
+  .cuenta .num{font-size:110px;font-weight:900;font-variant-numeric:tabular-nums;line-height:1}
+  .cuenta .lab{font-size:22px;letter-spacing:.25em;color:var(--verde-400);margin-top:8px;font-weight:800}
+  .cuenta .num.tick{animation:tick .45s ease}
+  @keyframes tick{from{transform:scale(1.12);color:var(--lima)}to{transform:none}}
+
+  /* Próximo */
+  .proximo{display:inline-flex;gap:28px;align-items:center;padding:24px 40px;border-radius:24px;background:rgba(4,23,13,.75);border-left:10px solid var(--verde-400);text-align:left;margin-top:40px}
+  .proximo .k{font-size:22px;letter-spacing:.25em;color:var(--verde-400);font-weight:800}
+  .proximo .t{font-size:40px;font-weight:800;margin-top:6px}
+  .proximo .n{font-size:28px;color:var(--gris);font-weight:600;margin-top:4px}
+
+  /* Agenda */
+  .agenda{width:1400px;display:flex;flex-direction:column;gap:12px;text-align:left}
+  .agenda .fila{display:grid;grid-template-columns:230px 1fr;gap:30px;align-items:center;padding:14px 34px;border-radius:18px;background:rgba(255,255,255,.06);border:2px solid rgba(34,197,94,.25);opacity:0;transform:translateX(-60px);animation:aparece .7s cubic-bezier(.2,.8,.2,1) forwards}
+  .agenda .hora{font-size:34px;font-weight:900;color:var(--lima)}
+  .agenda .tema{font-size:30px;font-weight:800}
+  .agenda .quien{font-size:22px;color:var(--gris);font-weight:600;margin-top:4px}
+
+  /* Patrocinadores */
+  .logos{display:grid;grid-template-columns:repeat(3,400px);gap:30px;justify-content:center}
+  .logos .l{height:170px;border-radius:24px;background:rgba(255,255,255,.95);color:var(--verde-800);display:flex;align-items:center;justify-content:center;font-size:32px;font-weight:900;padding:20px;text-align:center;opacity:0;transform:scale(.7);animation:pop .7s cubic-bezier(.2,.9,.3,1.4) forwards}
+  .logos .l img{max-width:100%;max-height:120px}
+  @keyframes pop{to{opacity:1;transform:none}}
+
+  /* Icono de estado (técnico) */
+  .icono{width:150px;height:150px;border-radius:50%;border:10px solid rgba(34,197,94,.25);border-top-color:var(--verde-400);animation:gira 1.1s linear infinite;margin:0 auto}
+  @keyframes gira{to{transform:rotate(360deg)}}
+  .ondas{display:flex;gap:14px;justify-content:center;align-items:flex-end;height:90px}
+  .ondas i{width:16px;border-radius:8px;background:var(--verde-400);animation:onda 1s ease-in-out infinite}
+  .ondas i:nth-child(2){animation-delay:.12s}.ondas i:nth-child(3){animation-delay:.24s}.ondas i:nth-child(4){animation-delay:.36s}.ondas i:nth-child(5){animation-delay:.48s}
+  @keyframes onda{0%,100%{height:20px}50%{height:90px;background:var(--lima)}}
+</style>
+</head>
+<body class="solido">
+  <div class="fondo"><div class="brillo"></div><canvas id="fx"></canvas><div class="rejilla"></div></div>
+
+  <div class="top">
+    <div class="marca" id="marca"></div>
+    <div class="chip" id="chip"></div>
+  </div>
+
+  <div class="centro">
+    <div class="kicker aparece" id="kicker"></div>
+    <div class="titulo" id="titulo"></div>
+    <div class="linea"></div>
+    <div class="sub aparece" id="sub" style="animation-delay:.5s"></div>
+    <div class="extra aparece" id="extra" style="animation-delay:.8s"></div>
+  </div>
+
+  <div class="ticker" id="ticker">
+    <div class="etiqueta" id="tag"></div>
+    <div class="msg"></div>
+    <div class="reloj"></div>
+  </div>
+
+<script src="datos.js"></script>
+<script src="comun.js"></script>
+<script>
+/* Escenas de pantalla completa. Los textos y tiempos se configuran en panel.html (⚙ Configurar → Escenas).
+   Prioridad: datos.js (panel) > parámetros de la URL (?tipo=..&min=..&hora=..&sig=..) > valores por defecto. */
+const {P,$,esc,marca,particulas,ticker,expositor} = UT;
+const tipo = (P.get("tipo") || "inicio").toLowerCase();
+const cargaPagina = Date.now();
+
+function porDefecto(D){
+  return {
+    inicio:        { kicker:"Transmisión en vivo", titulo:"Iniciando *pronto*", sub:D.lema, cuenta:true, min:10, alTerminar:"¡Comenzamos en un momento!" },
+    bienvenida:    { kicker:D.fechas, titulo:"¡Ya *comenzamos!*", sub:"Bienvenidos a " + D.evento },
+    receso:        { kicker:"Volvemos enseguida", titulo:"*Receso*", sub:"Aprovecha para recorrer los salones y stands", cuenta:true, min:15, proximo:true, alTerminar:"¡Volvemos en un momento!" },
+    preguntas:     { kicker:"Tu turno", titulo:"Preguntas y *respuestas*", sub:"Levanta la mano o acércate al micrófono · " + D.hashtag, ondas:true },
+    tecnico:       { kicker:"Un momento, por favor", titulo:"Ajustando la *señal*", sub:"La transmisión continuará en breve", icono:true },
+    agenda:        { kicker:D.fechas, titulo:"*Agenda* del día", sub:"", agenda:true, max:6 },
+    patrocinadores:{ kicker:"Gracias a quienes lo hacen posible", titulo:"*Aliados* y patrocinadores", sub:"", logos:true },
+    cierre:        { kicker:"Hasta la próxima", titulo:"¡Gracias por *acompañarnos!*", sub:D.lema + " · " + D.hashtag },
+    siguiente:     { kicker:"A continuación", titulo:"Próxima *conferencia*", sub:"", proximo:true }
+  };
+}
+function config(){
+  const D = UT.D, base = porDefecto(D)[tipo] || porDefecto(D).inicio;
+  const E = Object.assign({}, base);
+  // URL de OBS
+  ["kicker","titulo","sub"].forEach(k => { if(P.get(k) !== null) E[k] = P.get(k); });
+  if(P.get("min")) E.min = Number(P.get("min"));
+  if(P.get("hora")) E.hora = P.get("hora");
+  if(P.get("max")) E.max = Number(P.get("max"));
+  // Panel (datos.js) — los campos vacíos usan el valor anterior
+  const o = (D.escenas || {})[tipo] || {};
+  Object.keys(o).forEach(k => { if(o[k] !== "" && o[k] !== null && o[k] !== undefined) E[k] = o[k]; });
+  return E;
+}
+
+let tCuenta = null, finCuenta = 0;
+function calcularFin(E, esReinicio){
+  // 1. Si hay hora exacta (ej. 14:30), siempre apuntamos a esa hora
+  if(E.hora){ 
+    const [h,m] = String(E.hora).split(":").map(Number); 
+    const f = new Date(); f.setHours(h||0, m||0, 0, 0); 
+    return f.getTime(); 
+  }
+  // 2. Si se pulsó el botón "Iniciar cuenta ahora" en el panel
+  if(E.inicio){
+    return Number(E.inicio) + Number(E.min||0)*60000;
+  }
+  // 3. Si se recargó datos.js y NO había un tiempo absoluto, reiniciamos la cuenta desde AHORA
+  if(esReinicio) {
+    return Date.now() + Number(E.min||0)*60000;
+  }
+  // 4. Comportamiento original al cargar la escena en OBS por primera vez
+  return cargaPagina + Number(E.min||0)*60000;
+}
+
+function render(esReinicio = false){
+  UT.colores();
+  const D = UT.D, E = config();
+  marca($("#marca"));
+  $("#chip").innerHTML = (tipo==="inicio"||tipo==="tecnico") ? '<span class="punto"></span>' + esc(D.fechas) : esc(D.hashtag);
+  $("#tag").textContent = D.evento;
+  $("#kicker").textContent = E.kicker || "";
+  $("#sub").textContent = E.sub \vert{}\vert{} ""; $("#sub").style.display = E.sub ? "" : "none";
+
+  // Título: palabras con animación escalonada; *texto* = color acento
+  const tEl = $("#titulo"); tEl.innerHTML = ""; let k = 0;
+  String(E.titulo||"").split(/(\*[^*]+\*)/).filter(Boolean).forEach(p=>{
+    const acento = p.startsWith("*");
+    p.replace(/\*/g,"").split(" ").filter(Boolean).forEach(w=>{
+      const s=document.createElement("span"); s.className="w"+(acento?" acento":""); s.textContent=w;
+      s.style.animationDelay=(.15+k*.12)+"s"; k++; tEl.appendChild(s); tEl.appendChild(document.createTextNode(" "));
+    });
+  });
+  const largo = String(E.titulo||"").replace(/\*/g,"").length;
+  tEl.style.fontSize = (E.agenda||E.logos) ? "96px" : largo>28 ? "104px" : largo>20 ? "120px" : "";
+
+  const ex = $("#extra"); ex.innerHTML = "";
+  document.body.classList.toggle("agenda-on", !!E.agenda);
+  document.querySelector(".centro").style.top = E.agenda ? "120px" : "";
+  $(".linea").style.margin = E.agenda ? "10px auto 6px" : "";
+
+  clearInterval(tCuenta);
+  if(E.cuenta && (E.min || E.hora)){
+    // AQUÍ ESTÁ LA SOLUCIÓN: Calculamos el fin siempre que render() es llamado por un cambio.
+    finCuenta = calcularFin(E, esReinicio); 
+    
+    ex.innerHTML = '<div class="cuenta"><div class="caja"><div class="num" id="mm">00</div><div class="lab">MINUTOS</div></div><div class="caja"><div class="num" id="ss">00</div><div class="lab">SEGUNDOS</div></div></div>';
+    const mm=$("#mm"), ss=$("#ss");
+    const pinta=()=>{
+      const r=Math.max(0,Math.round((finCuenta-Date.now())/1000));
+      const m=String(Math.floor(r/60)).padStart(2,"0"), s=String(r%60).padStart(2,"0");
+      if(mm.textContent!==m){mm.textContent=m;mm.classList.remove("tick");void mm.offsetWidth;mm.classList.add("tick");}
+      if(ss.textContent!==s){ss.textContent=s;ss.classList.remove("tick");void ss.offsetWidth;ss.classList.add("tick");}
+      if(r===0 && E.alTerminar){ $("#sub").textContent=E.alTerminar; $("#sub").style.display=""; }
+    };
+    pinta(); tCuenta = setInterval(pinta,250);
+  }
+  if(E.proximo){
+    // Si no se eligió a nadie, muestra automáticamente la ponencia siguiente a la que está en curso
+    let sig = E.sig;
+    if(!sig){ const L=(D.expositores||[]), ia=L.findIndex(x=>String(x.id)===String(D.actual)); if(ia>=0 && L[ia+1]) sig = L[ia+1].id; }
+    const e = sig ? expositor(sig) : null;
+    if(e) ex.insertAdjacentHTML("beforeend",
+      `<div class="proximo"><div><div class="k">A CONTINUACIÓN${e.hora?" · "+esc(e.hora):""}${e.salon?" · "+esc(e.salon):""}</div><div class="t">${esc(e.tema||"")}</div><div class="n">${esc(e.nombre)} · ${esc(e.cargo||"")}</div></div></div>`);
+  }
+  if(E.ondas) ex.innerHTML = '<div class="ondas"><i></i><i></i><i></i><i></i><i></i></div>';
+  if(E.icono) ex.innerHTML = '<div class="icono"></div>';
+  if(E.agenda){
+    // Agenda: muestra desde la ponencia en curso en adelante (útil con muchos expositores)
+    const L=(D.expositores||[]), ia=Math.max(0,L.findIndex(e=>String(e.id)===String(D.actual)));
+    const filas=L.slice(ia).filter(e=>e.hora||e.tema).slice(0,Number(E.max||6));
+    ex.innerHTML='<div class="agenda">'+filas.map((e,i)=>`<div class="fila" style="animation-delay:${.9+i*.15}s"><div class="hora">${esc(e.hora)}</div><div><div class="tema">${esc(e.tema)}</div><div class="quien">${esc(e.nombre)} · ${esc(e.cargo)}</div></div></div>`).join("")+'</div>';
+  }
+  if(E.logos){
+    ex.innerHTML='<div class="logos">'+(D.patrocinadores||[]).map((p,i)=>`<div class="l" style="animation-delay:${.9+i*.12}s">${p.img?`<img src="${esc(p.img)}" alt="${esc(p.nombre)}">`:esc(p.nombre)}</div>`).join("")+'</div>';
+  }
+}
+
+// Inicialización primera vez
+render(false);
+particulas($("#fx"));
+ticker($("#ticker"));
+
+// Listener para actualizaciones automáticas desde panel
+UT.vivo(() => render(true));
+UT.escuchaPrevia(() => render(true));
+</script>
+</body>
+</html>

@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<title>CONTECS 2026 · Tarjeta de expositor</title>
+<link rel="stylesheet" href="estilo.css">
+<style>
+/*  Parámetros (en la URL):
+    ?id=3                  expositor de datos.js
+    &nombre=..&cargo=..    (opcional) texto directo en lugar de id
+    &dur=8                 segundos en pantalla (0 = se queda hasta ocultarla en OBS)
+    &anim=desliza | barrido | rebote
+    &pos=izq | der | centro
+    &espera=0.3            segundos antes de entrar
+    &tema=1                muestra también el título de la charla
+*/
+  .lt{position:absolute;bottom:120px;left:90px;display:flex;align-items:stretch;filter:drop-shadow(0 18px 40px rgba(0,0,0,.5));visibility:hidden}
+  .lt.der{left:auto;right:90px;flex-direction:row-reverse}
+  .lt.centro{left:0;right:0;margin:0 auto;width:fit-content}
+  .icono{width:150px;flex:0 0 150px;background:linear-gradient(160deg,var(--verde-400),var(--verde-600));display:flex;align-items:center;justify-content:center;border-radius:22px 0 0 22px;position:relative;overflow:hidden}
+  .lt.der .icono{border-radius:0 22px 22px 0}
+  .icono b{font-size:84px;font-weight:900;color:var(--verde-900);line-height:1}
+  .icono::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%)}
+  .cuerpo{display:flex;flex-direction:column;min-width:640px;overflow:hidden}
+  .nombre{background:rgba(255,255,255,.97);color:var(--verde-900);font-size:56px;font-weight:900;padding:18px 44px 12px 36px;white-space:nowrap;letter-spacing:.005em}
+  .cargo{background:var(--verde-800);color:var(--blanco);font-size:27px;font-weight:700;padding:13px 44px 14px 36px;white-space:nowrap;border-radius:0 0 22px 0;display:flex;gap:16px;align-items:center}
+  .lt.der .cargo{border-radius:0 0 0 22px}
+  .cargo i{display:inline-block;width:10px;height:10px;border-radius:50%;background:var(--lima)}
+  .tema{color:var(--lima);font-weight:800}
+  .barra{position:absolute;left:0;right:0;bottom:-8px;height:8px;background:linear-gradient(90deg,var(--verde-400),var(--lima));border-radius:8px;transform-origin:left;transform:scaleX(0)}
+  .lt.der .barra{transform-origin:right}
+  .txt{display:block}
+
+  /* ====== ENTRADA / SALIDA: desliza ====== */
+  .desliza.in{visibility:visible;animation:dIn .8s cubic-bezier(.16,1,.3,1) both}
+  .desliza.in .icono{animation:iconIn .7s .05s cubic-bezier(.16,1,.3,1) both}
+  .desliza.in .nombre .txt{animation:txtUp .7s .25s cubic-bezier(.16,1,.3,1) both}
+  .desliza.in .cargo .txtc{animation:txtUp .7s .4s cubic-bezier(.16,1,.3,1) both}
+  .desliza.in .barra{animation:barra .8s .45s cubic-bezier(.16,1,.3,1) forwards}
+  .desliza.in .icono::after{animation:brillo 1.2s .8s ease forwards}
+  .desliza.out{visibility:visible;animation:dOut .65s cubic-bezier(.7,0,.84,0) forwards}
+  @keyframes dIn{from{transform:translateX(-130%);opacity:0}to{transform:none;opacity:1}}
+  @keyframes dOut{from{transform:none;opacity:1}to{transform:translateX(-130%);opacity:0}}
+  .lt.der.desliza.in{animation-name:dInR}.lt.der.desliza.out{animation-name:dOutR}
+  @keyframes dInR{from{transform:translateX(130%);opacity:0}to{transform:none;opacity:1}}
+  @keyframes dOutR{from{transform:none;opacity:1}to{transform:translateX(130%);opacity:0}}
+
+  /* ====== barrido (wipe) ====== */
+  .barrido.in{visibility:visible}
+  .barrido.in .icono{animation:pop .5s cubic-bezier(.2,.9,.3,1.4) both}
+  .barrido.in .cuerpo{animation:wipe .75s .25s cubic-bezier(.16,1,.3,1) both}
+  .barrido.in .nombre .txt{animation:txtUp .6s .55s cubic-bezier(.16,1,.3,1) both}
+  .barrido.in .cargo .txtc{animation:txtUp .6s .7s cubic-bezier(.16,1,.3,1) both}
+  .barrido.in .barra{animation:barra .7s .7s cubic-bezier(.16,1,.3,1) forwards}
+  .barrido.out{visibility:visible}
+  .barrido.out .cuerpo{animation:wipeOut .55s cubic-bezier(.7,0,.84,0) forwards}
+  .barrido.out .icono{animation:popOut .4s .4s cubic-bezier(.7,0,.84,0) forwards}
+  .barrido.out .barra{transform:scaleX(1);animation:barraOut .45s cubic-bezier(.7,0,.84,0) forwards}
+  @keyframes wipe{from{clip-path:inset(0 100% 0 0)}to{clip-path:inset(0 0 0 0)}}
+  @keyframes wipeOut{from{clip-path:inset(0 0 0 0)}to{clip-path:inset(0 100% 0 0)}}
+  @keyframes pop{from{transform:scale(0) rotate(-20deg)}to{transform:none}}
+  @keyframes popOut{to{transform:scale(0) rotate(20deg)}}
+
+  /* ====== rebote (sube desde abajo) ====== */
+  .rebote.in{visibility:visible;animation:rIn .9s cubic-bezier(.34,1.56,.64,1) both}
+  .rebote.in .nombre .txt{animation:fade .5s .35s both}
+  .rebote.in .cargo .txtc{animation:fade .5s .5s both}
+  .rebote.in .barra{animation:barra .6s .5s ease forwards}
+  .rebote.out{visibility:visible;animation:rOut .55s cubic-bezier(.6,-0.28,.74,.05) forwards}
+  @keyframes rIn{from{transform:translateY(260px) scale(.9);opacity:0}to{transform:none;opacity:1}}
+  @keyframes rOut{from{transform:none;opacity:1}to{transform:translateY(260px) scale(.9);opacity:0}}
+
+  @keyframes iconIn{from{transform:translateX(-60px);opacity:0}to{transform:none;opacity:1}}
+  @keyframes txtUp{from{transform:translateY(110%);opacity:0}to{transform:none;opacity:1}}
+  @keyframes fade{from{opacity:0}to{opacity:1}}
+  @keyframes barra{to{transform:scaleX(1)}}
+  @keyframes barraOut{from{transform:scaleX(1)}to{transform:scaleX(0)}}
+  @keyframes brillo{to{transform:translateX(120%)}}
+  .nombre,.cargo{overflow:hidden}
+</style>
+</head>
+<body class="transparente">
+  <div class="lt" id="lt">
+    <div class="icono"><b>C</b></div>
+    <div class="cuerpo">
+      <div class="nombre"><span class="txt" id="nombre"></span></div>
+      <div class="cargo"><span class="txtc" style="display:flex;gap:16px;align-items:center"><i></i><span id="cargo"></span></span></div>
+    </div>
+    <div class="barra"></div>
+  </div>
+<script src="datos.js"></script>
+<script src="comun.js"></script>
+<script>
+const {P,$,expositor} = UT;
+const e = expositor(P.get("id")) || {};
+const nombre = P.get("nombre") || e.nombre || "Nombre del expositor";
+let cargo = P.get("cargo") || e.cargo || "Cargo · Institución";
+if(P.get("tema")==="1" && e.tema) cargo += ' &nbsp;·&nbsp; <span class="tema">' + e.tema + '</span>';
+$("#nombre").textContent = nombre;
+$("#cargo").innerHTML = cargo;
+
+const lt = $("#lt");
+const anim = ["desliza","barrido","rebote"].includes(P.get("anim")) ? P.get("anim") : "desliza";
+const pos = P.get("pos"); if(pos==="der"||pos==="centro") lt.classList.add(pos);
+const dur = P.has("dur") ? Number(P.get("dur")) : 8;
+const espera = Number(P.get("espera") || .3) * 1000;
+
+lt.classList.add(anim);
+function mostrar(){ lt.classList.remove("out"); void lt.offsetWidth; lt.classList.add("in"); }
+function ocultar(){ lt.classList.remove("in"); void lt.offsetWidth; lt.classList.add("out"); }
+
+setTimeout(()=>{
+  mostrar();
+  if(dur>0) setTimeout(ocultar, dur*1000);
+}, espera);
+
+// Vista previa en navegador: clic para repetir la animación
+document.addEventListener("click", ()=>{ ocultar(); setTimeout(()=>{ mostrar(); if(dur>0) setTimeout(ocultar,dur*1000); },900); });
+</script>
+</body>
+</html>

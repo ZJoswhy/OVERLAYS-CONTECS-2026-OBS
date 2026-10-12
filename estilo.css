@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800;900&display=swap");
+
+:root{
+  --verde-900:#04170d;
+  --verde-800:#072a17;
+  --verde-700:#0b3d22;
+  --verde-600:#0f5530;
+  --verde-500:#16a34a;
+  --verde-400:#22c55e;
+  --lima:#a3f75b;
+  --blanco:#ffffff;
+  --gris:#cfe3d6;
+  --sombra:0 18px 50px rgba(0,0,0,.45);
+  --font:"Montserrat","Segoe UI Black","Segoe UI",Arial,sans-serif;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{width:1920px;height:1080px;overflow:hidden;font-family:var(--font);color:var(--blanco)}
+body.transparente{background:transparent}
+body.solido{background:var(--verde-900)}
+
+/* ---------- Fondo animado ---------- */
+.fondo{position:absolute;inset:0;overflow:hidden;
+  background:
+    radial-gradient(1200px 700px at 15% 10%, rgba(34,197,94,.22), transparent 60%),
+    radial-gradient(900px 600px at 90% 90%, rgba(163,247,91,.12), transparent 60%),
+    linear-gradient(135deg,var(--verde-900) 0%,var(--verde-800) 45%,var(--verde-700) 100%);}
+.fondo .rejilla{position:absolute;left:-50%;right:-50%;bottom:-10%;height:70%;
+  background-image:
+    linear-gradient(rgba(34,197,94,.22) 2px,transparent 2px),
+    linear-gradient(90deg,rgba(34,197,94,.22) 2px,transparent 2px);
+  background-size:80px 80px;
+  transform:perspective(600px) rotateX(62deg);transform-origin:center top;
+  animation:rejilla 6s linear infinite;
+  -webkit-mask-image:linear-gradient(to top,#000 10%,transparent 85%);mask-image:linear-gradient(to top,#000 10%,transparent 85%);}
+@keyframes rejilla{to{background-position:0 80px,0 0}}
+.fondo canvas{position:absolute;inset:0}
+.fondo .brillo{position:absolute;width:900px;height:900px;border-radius:50%;
+  background:radial-gradient(circle,rgba(34,197,94,.25),transparent 65%);
+  filter:blur(20px);animation:flota 14s ease-in-out infinite alternate}
+@keyframes flota{from{transform:translate(-200px,-150px)}to{transform:translate(1300px,400px)}}
+
+/* ---------- Marca ---------- */
+.marca{display:flex;align-items:center;gap:18px}
+.marca img{height:64px;display:block}
+.wordmark{font-weight:900;letter-spacing:.06em;font-size:40px;line-height:1}
+.wordmark span{color:var(--verde-400)}
+.chip{display:inline-flex;align-items:center;gap:12px;padding:10px 22px;border-radius:999px;
+  background:rgba(255,255,255,.08);border:2px solid rgba(34,197,94,.55);font-weight:700;font-size:24px;letter-spacing:.04em}
+.punto{width:14px;height:14px;border-radius:50%;background:#ff3b3b;box-shadow:0 0 0 0 rgba(255,59,59,.7);animation:pulso 1.6s infinite}
+@keyframes pulso{70%{box-shadow:0 0 0 16px rgba(255,59,59,0)}100%{box-shadow:0 0 0 0 rgba(255,59,59,0)}}
+
+/* ---------- Ticker inferior ---------- */
+.ticker{position:absolute;left:0;right:0;bottom:0;height:64px;display:flex;align-items:stretch;
+  background:rgba(4,23,13,.92);border-top:3px solid var(--verde-400);font-size:26px;font-weight:700}
+.ticker .etiqueta{display:flex;align-items:center;padding:0 32px;background:var(--verde-400);color:var(--verde-900);font-weight:900;letter-spacing:.05em;
+  clip-path:polygon(0 0,100% 0,calc(100% - 22px) 100%,0 100%);padding-right:48px}
+.ticker .msg{flex:1;display:flex;align-items:center;padding:0 34px;position:relative;overflow:hidden}
+.ticker .msg span{position:absolute;white-space:nowrap;transition:transform .7s cubic-bezier(.2,.8,.2,1),opacity .7s}
+.ticker .msg span.entra{transform:translateY(0);opacity:1}
+.ticker .msg span.sale{transform:translateY(-60px);opacity:0}
+.ticker .msg span.espera{transform:translateY(60px);opacity:0}
+.ticker .reloj{display:flex;align-items:center;padding:0 32px;color:var(--lima);font-variant-numeric:tabular-nums}
+
+/* ---------- Entradas genéricas ---------- */
+.aparece{opacity:0;transform:translateY(40px);animation:aparece .9s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes aparece{to{opacity:1;transform:none}}

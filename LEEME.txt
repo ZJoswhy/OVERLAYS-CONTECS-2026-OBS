@@ -1,0 +1,69 @@
+CONTECS 2026 · PAQUETE DE OVERLAYS PARA OBS
+==========================================
+
+PANEL ÚNICO: panel.html  (pestañas 🎛 En vivo y ⚙ Configurar)
+  deck.html y configurar.html ahora solo redirigen a panel.html.
+
+IMPORTAR EXPOSITORES DESDE EXCEL
+  panel.html > ⚙ Configurar > Expositores > «Importar Excel / CSV».
+  Usa plantilla_expositores.xlsx (columnas: ID, Nombre, Cargo / institución, Título de la ponencia, Día, Hora, Salón).
+  En 🎛 En vivo: buscador, filtro por día y botones ◀ Anterior / Siguiente ponencia ▶ (atajo N o →).
+
+CONFIGURADOR (pestaña ⚙ Configurar de panel.html)
+  Abre "panel.html" (doble clic, se abre en Edge). Ahí cambias ponencia en curso,
+  nombres sobre las cámaras, expositores, patrocinadores (subes sus logos), colores, logo
+  y mensajes. Pulsa "Guardar datos.js" (Ctrl+S): la primera vez elige el datos.js de esta
+  carpeta para reemplazarlo. OBS toma los cambios solo en ~4 segundos, sin tocar nada.
+
+STREAM DECK VIRTUAL (pestaña 🎛 En vivo de panel.html)
+  Ya está dentro de OBS como panel "CONTECS Deck" (Paneles > Paneles de navegador personalizados).
+  Usa el servidor WebSocket de OBS (Herramientas > Ajustes del servidor WebSocket, puerto 4455).
+  Botones: escenas, mostrar/ocultar tarjeta de ponencia, ponencia en curso, tarjetas de nombre,
+  corte/desvanecer, transmitir/grabar. Atajos: 1-9,0 escenas · P mostrar · O ocultar.
+
+TARJETA "PONENCIA PRESENTADA POR" (ponencia.html) — fuente aparte
+  Ya no está pegada al marco: aparece y desaparece animada sobre la zona inferior izquierda.
+  En configurar.html: cada cuántos minutos, cuántos segundos, "Mostrar ahora" / "Ocultar ahora".
+  En OBS también puedes usar el ojo de la fuente "Ponencia presentada".
+  Colección actual: OBS_Coleccion_CONTECS2026_Final.json
+
+COLECCIÓN CON 2 CÁMARAS (anterior): OBS_Coleccion_CONTECS2026_2camaras.json
+  03/04 Cámara 1 o 2 completa · 05 Presentación + cámara · 06 invertido
+  07 Presentación + 2 cámaras · 08 invertido · 09 Dos cámaras · 10 invertido · 11 Solo presentación
+  Marcos: marco.html?layout=pres1|pres1-inv|pres2|pres2-inv|cams2|cams2-inv|pres|cam
+
+ARCHIVOS
+  datos.js        -> AQUÍ editas nombres, cargos, temas, horas, mensajes y patrocinadores
+  escena.html     -> pantallas completas (?tipo=inicio|bienvenida|receso|siguiente|preguntas|agenda|patrocinadores|tecnico|cierre)
+  marco.html      -> marco transparente sobre la cámara (?layout=expositor) o presentación+cámara (?layout=dual&id=3)
+  tarjeta.html    -> tarjeta de nombre animada (lower third)
+  logo.png        -> (opcional) exporta tu logo de Canva con fondo transparente con este nombre y aparece solo
+  OBS_Coleccion_CONTECS2026.json -> colección de escenas lista para importar
+
+IMPORTAR EN OBS
+  Colección de escenas > Importar > "..." > elige OBS_Coleccion_CONTECS2026.json > Importar
+  Luego: Colección de escenas > CONTECS 2026
+  En la fuente "Cámara" elige tu cámara (doble clic sobre ella).
+
+TARJETAS DE EXPOSITORES (cómo se usan en vivo)
+  En las escenas 03 y 04 hay una fuente "Tarjeta N · Nombre" por expositor, oculta (ojo cerrado).
+  1. Clic en el ojo -> la tarjeta ENTRA deslizándose, se queda 8 s y SALE sola con animación.
+  2. Para volver a mostrarla: ciérrale el ojo y ábrelo otra vez (se reinicia la animación).
+  Atajo de teclado: Archivo > Configuración > Atajos > busca "Tarjeta 1" > "Mostrar"/"Ocultar".
+
+  Opciones en la URL de la tarjeta (doble clic en la fuente > URL):
+    id=3              expositor de datos.js
+    dur=8             segundos en pantalla (dur=0 = se queda hasta que la ocultes)
+    anim=desliza | barrido | rebote
+    pos=izq | der | centro
+    tema=1            agrega el título de la charla
+    nombre=Ana%20Pérez&cargo=Ingeniera   (texto directo sin usar datos.js)
+
+CUENTAS REGRESIVAS
+  escena.html?tipo=inicio&min=10     (10 minutos desde que se activa la escena)
+  escena.html?tipo=inicio&hora=08:30 (hasta una hora exacta)
+  escena.html?tipo=receso&min=15&sig=4  (muestra "A continuación" con el expositor 4)
+
+Las fuentes tienen activado "Actualizar navegador cuando la escena se active"
+y "Apagar fuente cuando no esté visible", por eso las animaciones se repiten
+cada vez que entras a la escena o muestras la fuente.

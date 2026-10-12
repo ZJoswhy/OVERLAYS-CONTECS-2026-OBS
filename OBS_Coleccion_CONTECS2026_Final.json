@@ -1,0 +1,5796 @@
+{
+ "name": "CONTECS 2026 · Final",
+ "DesktopAudioDevice1": {
+  "prev_ver": 536936449,
+  "name": "Audio del escritorio",
+  "uuid": "60b13452-a55a-47cc-b216-d18e83d4ef46",
+  "id": "wasapi_output_capture",
+  "versioned_id": "wasapi_output_capture",
+  "settings": {
+   "device_id": "default"
+  },
+  "mixers": 255,
+  "sync": 0,
+  "flags": 0,
+  "volume": 1.0,
+  "balance": 0.5,
+  "enabled": true,
+  "muted": false,
+  "push-to-mute": false,
+  "push-to-mute-delay": 0,
+  "push-to-talk": false,
+  "push-to-talk-delay": 0,
+  "hotkeys": {
+   "libobs.mute": [],
+   "libobs.unmute": [],
+   "libobs.push-to-mute": [],
+   "libobs.push-to-talk": []
+  },
+  "deinterlace_mode": 0,
+  "deinterlace_field_order": 0,
+  "monitoring_type": 0,
+  "private_settings": {}
+ },
+ "AuxAudioDevice1": {
+  "prev_ver": 536936449,
+  "name": "Mic/Aux",
+  "uuid": "fd6bfe18-d29a-43ea-b3ce-2e03355c50da",
+  "id": "wasapi_input_capture",
+  "versioned_id": "wasapi_input_capture",
+  "settings": {
+   "device_id": "default"
+  },
+  "mixers": 255,
+  "sync": 0,
+  "flags": 0,
+  "volume": 1.0,
+  "balance": 0.5,
+  "enabled": true,
+  "muted": false,
+  "push-to-mute": false,
+  "push-to-mute-delay": 0,
+  "push-to-talk": false,
+  "push-to-talk-delay": 0,
+  "hotkeys": {
+   "libobs.mute": [],
+   "libobs.unmute": [],
+   "libobs.push-to-mute": [],
+   "libobs.push-to-talk": []
+  },
+  "deinterlace_mode": 0,
+  "deinterlace_field_order": 0,
+  "monitoring_type": 0,
+  "private_settings": {}
+ },
+ "sources": [
+  {
+   "prev_ver": 536936449,
+   "name": "Cámara 1",
+   "uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+   "id": "dshow_input",
+   "versioned_id": "dshow_input",
+   "settings": {
+    "last_video_device_id": "HP TrueVision HD Camera:\\\\?\\usb#22vid_30c9&pid_0035&mi_00#227&16c2d86a&0&0000#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global",
+    "video_device_id": "HP TrueVision HD Camera:\\\\?\\usb#22vid_30c9&pid_0035&mi_00#227&16c2d86a&0&0000#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\global"
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Cámara 2",
+   "uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+   "id": "dshow_input",
+   "versioned_id": "dshow_input",
+   "settings": {
+    "video_device_id": "Redmi 10 2022 (Windows Virtual Camera):\\\\?\\swd#22vcamdevapi#22e073a954be8d08d4313ef1f7b3563d872abc7f7be895005d39f793e559e82fc9#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\{fcebba03-9d13-4c13-9940-cc84fcd132d1}",
+    "last_video_device_id": "Redmi 10 2022 (Windows Virtual Camera):\\\\?\\swd#22vcamdevapi#22e073a954be8d08d4313ef1f7b3563d872abc7f7be895005d39f793e559e82fc9#22{65e8773d-8f56-11d0-a3b9-00a0c9223196}\\{fcebba03-9d13-4c13-9940-cc84fcd132d1}"
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Pantalla (presentación)",
+   "uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+   "id": "monitor_capture",
+   "versioned_id": "monitor_capture",
+   "settings": {
+    "show_cursor": null,
+    "monitor_id": "\\\\?\\DISPLAY#CMN153B#5&2c77b9ab&0&UID512#{e6f07b5f-ee97-4a90-b076-33f57bf4eaa7}",
+    "capture_cursor": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {},
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta · Ponencia en curso",
+   "uuid": "02c57ed9-d0ad-41ca-8f91-0b4b8bb25bc1",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=actual&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 1 · Nicolás Samaniego",
+   "uuid": "15421f2f-cbdb-43b4-923c-191a832ec08a",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=1&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 2 · Diego Vásquez",
+   "uuid": "7d3356dd-fe2c-48dc-87c1-c8a41e545b23",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=2&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 3 · Expositor 3",
+   "uuid": "fbdebf49-52fc-4896-9880-50d058795ff2",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=3&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 4 · Expositor 4",
+   "uuid": "dfb86693-0950-425d-9f40-dd7d8738b4a2",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=4&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 5 · Expositor 5",
+   "uuid": "88c326b1-0316-406f-9548-02bdbe62b7cd",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=5&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Tarjeta 6 · Expositor 6",
+   "uuid": "dbf06203-81ac-49ce-b0da-fc373ba14a94",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/tarjeta.html?id=6&dur=8&anim=desliza",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Presentación + 1 cámara",
+   "uuid": "cb4944ed-03ff-498c-992a-422c232f2bd8",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=pres1",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · 1 cámara + presentación (invertido)",
+   "uuid": "f465e20a-9359-46f1-a662-362830194170",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=pres1-inv",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Presentación + 2 cámaras",
+   "uuid": "dfd03bc6-269b-438b-9785-f79b030db4e7",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=pres2",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · 2 cámaras + presentación (invertido)",
+   "uuid": "ea4cf9b1-30e6-47ca-84fd-c93b790309a5",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=pres2-inv",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Dos cámaras lado a lado",
+   "uuid": "356295f5-352d-4d2f-8751-a685d21c89cd",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=cams2",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Dos cámaras (invertidas)",
+   "uuid": "cb92ef13-7e08-4019-9810-09f5717c06f2",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=cams2-inv",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Solo presentación",
+   "uuid": "471b1627-8d7c-4bbd-b984-9effea5116e3",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=pres",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Marco · Cámara completa",
+   "uuid": "1b007ae4-0bd5-4b8f-943e-5d790f789f80",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/marco.html?layout=cam",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Iniciando pronto",
+   "uuid": "90fa0f24-d140-425a-99d9-d8871ff23c92",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=inicio&min=10",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · ¡Ya comenzamos!",
+   "uuid": "f2066d23-2607-41c9-8f71-bf3633667817",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=bienvenida",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Preguntas",
+   "uuid": "8b9e2f0d-58b3-47aa-8fca-56654d36396a",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=preguntas",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Receso",
+   "uuid": "1cac6ed8-003b-4712-9607-fba90952a2a3",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=receso&min=15&sig=4",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · A continuación",
+   "uuid": "582f161d-fd9d-4f63-9a84-edb86b7c5d23",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=siguiente&sig=4",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Agenda",
+   "uuid": "612535f8-3696-4e56-aa20-aa5285274c1f",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=agenda",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Patrocinadores",
+   "uuid": "b151abc4-a00d-4739-a3b4-1b9437422d3a",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=patrocinadores",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Dificultades técnicas",
+   "uuid": "e5ccbcd3-4f4d-435b-a77a-820eed76e7df",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=tecnico",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Escena · Cierre",
+   "uuid": "4f566251-e811-42a0-9833-60bf77172c99",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/escena.html?tipo=cierre",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": true,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "01 · Iniciando pronto",
+   "uuid": "6d3f5e78-ea06-4880-9046-9ff3dbcb08c1",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Iniciando pronto",
+      "source_uuid": "90fa0f24-d140-425a-99d9-d8871ff23c92",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "02 · ¡Ya comenzamos!",
+   "uuid": "2955141d-38dd-45aa-8120-592901f1fd39",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · ¡Ya comenzamos!",
+      "source_uuid": "f2066d23-2607-41c9-8f71-bf3633667817",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "03 · Cámara 1 completa",
+   "uuid": "e5c0a3b6-fa4a-4d70-9d1a-bb0140c4e944",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 10,
+    "items": [
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "bounds_rel": {
+       "x": 3.555555582046509,
+       "y": 2.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Cámara completa",
+      "source_uuid": "1b007ae4-0bd5-4b8f-943e-5d790f789f80",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada (cámara completa)",
+      "source_uuid": "bb3c0dd8-812f-462f-933e-3a1c60275908",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 10,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta · Ponencia en curso",
+      "source_uuid": "02c57ed9-d0ad-41ca-8f91-0b4b8bb25bc1",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 1 · Nicolás Samaniego",
+      "source_uuid": "15421f2f-cbdb-43b4-923c-191a832ec08a",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 2 · Diego Vásquez",
+      "source_uuid": "7d3356dd-fe2c-48dc-87c1-c8a41e545b23",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 3 · Expositor 3",
+      "source_uuid": "fbdebf49-52fc-4896-9880-50d058795ff2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 6,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 4 · Expositor 4",
+      "source_uuid": "dfb86693-0950-425d-9f40-dd7d8738b4a2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 7,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 5 · Expositor 5",
+      "source_uuid": "88c326b1-0316-406f-9548-02bdbe62b7cd",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 8,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 6 · Expositor 6",
+      "source_uuid": "dbf06203-81ac-49ce-b0da-fc373ba14a94",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 9,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": [],
+    "libobs.show_scene_item.5": [],
+    "libobs.hide_scene_item.5": [],
+    "libobs.show_scene_item.6": [],
+    "libobs.hide_scene_item.6": [],
+    "libobs.show_scene_item.7": [],
+    "libobs.hide_scene_item.7": [],
+    "libobs.show_scene_item.8": [],
+    "libobs.hide_scene_item.8": [],
+    "libobs.show_scene_item.9": [],
+    "libobs.hide_scene_item.9": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "04 · Cámara 2 completa",
+   "uuid": "852a1ac6-0c5c-4140-beae-17708499b03d",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 10,
+    "items": [
+     {
+      "name": "Cámara 2",
+      "source_uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "bounds_rel": {
+       "x": 3.555555582046509,
+       "y": 2.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Cámara completa",
+      "source_uuid": "1b007ae4-0bd5-4b8f-943e-5d790f789f80",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada (cámara completa)",
+      "source_uuid": "bb3c0dd8-812f-462f-933e-3a1c60275908",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 10,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta · Ponencia en curso",
+      "source_uuid": "02c57ed9-d0ad-41ca-8f91-0b4b8bb25bc1",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 1 · Nicolás Samaniego",
+      "source_uuid": "15421f2f-cbdb-43b4-923c-191a832ec08a",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 2 · Diego Vásquez",
+      "source_uuid": "7d3356dd-fe2c-48dc-87c1-c8a41e545b23",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 3 · Expositor 3",
+      "source_uuid": "fbdebf49-52fc-4896-9880-50d058795ff2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 6,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 4 · Expositor 4",
+      "source_uuid": "dfb86693-0950-425d-9f40-dd7d8738b4a2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 7,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 5 · Expositor 5",
+      "source_uuid": "88c326b1-0316-406f-9548-02bdbe62b7cd",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 8,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 6 · Expositor 6",
+      "source_uuid": "dbf06203-81ac-49ce-b0da-fc373ba14a94",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 9,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": [],
+    "libobs.show_scene_item.5": [],
+    "libobs.hide_scene_item.5": [],
+    "libobs.show_scene_item.6": [],
+    "libobs.hide_scene_item.6": [],
+    "libobs.show_scene_item.7": [],
+    "libobs.hide_scene_item.7": [],
+    "libobs.show_scene_item.8": [],
+    "libobs.hide_scene_item.8": [],
+    "libobs.show_scene_item.9": [],
+    "libobs.hide_scene_item.9": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "05 · Presentación + cámara",
+   "uuid": "c862be45-e572-4169-acd1-130891aeffc6",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 4,
+    "items": [
+     {
+      "name": "Pantalla (presentación)",
+      "source_uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 2,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1470.0,
+       "y": 827.0
+      },
+      "bounds_rel": {
+       "x": 2.407407522201538,
+       "y": 1.3537037372589111
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 1530.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": 0.7592592835426331,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 270.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.5314815044403076
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Presentación + 1 cámara",
+      "source_uuid": "cb4944ed-03ff-498c-992a-422c232f2bd8",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "06 · Cámara + presentación (invertido)",
+   "uuid": "6771a896-0f04-483c-9ccb-1fbb58867d9c",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 4,
+    "items": [
+     {
+      "name": "Pantalla (presentación)",
+      "source_uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 2,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 420.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -0.7037037014961243,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1470.0,
+       "y": 827.0
+      },
+      "bounds_rel": {
+       "x": 2.407407522201538,
+       "y": 1.3537037372589111
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 270.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.5314815044403076
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · 1 cámara + presentación (invertido)",
+      "source_uuid": "f465e20a-9359-46f1-a662-362830194170",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "07 · Presentación + 2 cámaras",
+   "uuid": "18c7117a-d9bc-4b1b-877f-c13af97d5812",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 5,
+    "items": [
+     {
+      "name": "Pantalla (presentación)",
+      "source_uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 2,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1470.0,
+       "y": 827.0
+      },
+      "bounds_rel": {
+       "x": 2.407407522201538,
+       "y": 1.3537037372589111
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 1530.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": 0.7592592835426331,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 404.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.6481481194496155
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 2",
+      "source_uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 1530.0,
+       "y": 453.0
+      },
+      "pos_rel": {
+       "x": 0.7592592835426331,
+       "y": -0.220370352268219
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 404.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.6481481194496155
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Presentación + 2 cámaras",
+      "source_uuid": "dfd03bc6-269b-438b-9785-f79b030db4e7",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "08 · 2 cámaras + presentación (invertido)",
+   "uuid": "9e85da53-96f6-4bf0-858f-4d775668cbb9",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 5,
+    "items": [
+     {
+      "name": "Pantalla (presentación)",
+      "source_uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 2,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 420.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -0.7037037014961243,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1470.0,
+       "y": 827.0
+      },
+      "bounds_rel": {
+       "x": 2.407407522201538,
+       "y": 1.3537037372589111
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 404.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.6481481194496155
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 2",
+      "source_uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 453.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.220370352268219
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 360.0,
+       "y": 404.0
+      },
+      "bounds_rel": {
+       "x": 0.9444444179534912,
+       "y": 0.6481481194496155
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · 2 cámaras + presentación (invertido)",
+      "source_uuid": "ea4cf9b1-30e6-47ca-84fd-c93b790309a5",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "09 · Dos cámaras lado a lado",
+   "uuid": "d330a298-d09f-41ac-95d6-57ee464d62da",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 11,
+    "items": [
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 90.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.7962962985038757
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 915.0,
+       "y": 700.0
+      },
+      "bounds_rel": {
+       "x": 1.6759259700775146,
+       "y": 0.9425926208496094
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 2",
+      "source_uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 975.0,
+       "y": 90.0
+      },
+      "pos_rel": {
+       "x": 0.02777777798473835,
+       "y": -0.7962962985038757
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 915.0,
+       "y": 700.0
+      },
+      "bounds_rel": {
+       "x": 1.6759259700775146,
+       "y": 0.9425926208496094
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Dos cámaras lado a lado",
+      "source_uuid": "356295f5-352d-4d2f-8751-a685d21c89cd",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 11,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta · Ponencia en curso",
+      "source_uuid": "02c57ed9-d0ad-41ca-8f91-0b4b8bb25bc1",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 1 · Nicolás Samaniego",
+      "source_uuid": "15421f2f-cbdb-43b4-923c-191a832ec08a",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 2 · Diego Vásquez",
+      "source_uuid": "7d3356dd-fe2c-48dc-87c1-c8a41e545b23",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 6,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 3 · Expositor 3",
+      "source_uuid": "fbdebf49-52fc-4896-9880-50d058795ff2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 7,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 4 · Expositor 4",
+      "source_uuid": "dfb86693-0950-425d-9f40-dd7d8738b4a2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 8,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 5 · Expositor 5",
+      "source_uuid": "88c326b1-0316-406f-9548-02bdbe62b7cd",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 9,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 6 · Expositor 6",
+      "source_uuid": "dbf06203-81ac-49ce-b0da-fc373ba14a94",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 10,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": [],
+    "libobs.show_scene_item.5": [],
+    "libobs.hide_scene_item.5": [],
+    "libobs.show_scene_item.6": [],
+    "libobs.hide_scene_item.6": [],
+    "libobs.show_scene_item.7": [],
+    "libobs.hide_scene_item.7": [],
+    "libobs.show_scene_item.8": [],
+    "libobs.hide_scene_item.8": [],
+    "libobs.show_scene_item.9": [],
+    "libobs.hide_scene_item.9": [],
+    "libobs.show_scene_item.10": [],
+    "libobs.hide_scene_item.10": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "10 · Dos cámaras (invertido)",
+   "uuid": "dcb6d932-bbf9-4fe8-b392-9b87e2ea9044",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 11,
+    "items": [
+     {
+      "name": "Cámara 1",
+      "source_uuid": "9a21d9c6-c06f-466b-be1c-771842ec6ea3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 975.0,
+       "y": 90.0
+      },
+      "pos_rel": {
+       "x": 0.02777777798473835,
+       "y": -0.7962962985038757
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 915.0,
+       "y": 700.0
+      },
+      "bounds_rel": {
+       "x": 1.6759259700775146,
+       "y": 0.9425926208496094
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Cámara 2",
+      "source_uuid": "c81be215-57e6-4da9-991b-aeda361c3199",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 3,
+      "bounds_align": 0,
+      "bounds_crop": true,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 30.0,
+       "y": 90.0
+      },
+      "pos_rel": {
+       "x": -1.703703761100769,
+       "y": -0.7962962985038757
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 915.0,
+       "y": 700.0
+      },
+      "bounds_rel": {
+       "x": 1.6759259700775146,
+       "y": 0.9425926208496094
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Dos cámaras (invertidas)",
+      "source_uuid": "cb92ef13-7e08-4019-9810-09f5717c06f2",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 11,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta · Ponencia en curso",
+      "source_uuid": "02c57ed9-d0ad-41ca-8f91-0b4b8bb25bc1",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 4,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 1 · Nicolás Samaniego",
+      "source_uuid": "15421f2f-cbdb-43b4-923c-191a832ec08a",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 5,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 2 · Diego Vásquez",
+      "source_uuid": "7d3356dd-fe2c-48dc-87c1-c8a41e545b23",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 6,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 3 · Expositor 3",
+      "source_uuid": "fbdebf49-52fc-4896-9880-50d058795ff2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 7,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 4 · Expositor 4",
+      "source_uuid": "dfb86693-0950-425d-9f40-dd7d8738b4a2",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 8,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 5 · Expositor 5",
+      "source_uuid": "88c326b1-0316-406f-9548-02bdbe62b7cd",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 9,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Tarjeta 6 · Expositor 6",
+      "source_uuid": "dbf06203-81ac-49ce-b0da-fc373ba14a94",
+      "visible": false,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 10,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": [],
+    "libobs.show_scene_item.3": [],
+    "libobs.hide_scene_item.3": [],
+    "libobs.show_scene_item.4": [],
+    "libobs.hide_scene_item.4": [],
+    "libobs.show_scene_item.5": [],
+    "libobs.hide_scene_item.5": [],
+    "libobs.show_scene_item.6": [],
+    "libobs.hide_scene_item.6": [],
+    "libobs.show_scene_item.7": [],
+    "libobs.hide_scene_item.7": [],
+    "libobs.show_scene_item.8": [],
+    "libobs.hide_scene_item.8": [],
+    "libobs.show_scene_item.9": [],
+    "libobs.hide_scene_item.9": [],
+    "libobs.show_scene_item.10": [],
+    "libobs.hide_scene_item.10": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "11 · Solo presentación",
+   "uuid": "cc3d5d62-edc5-4676-8000-33e0998cb2c6",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 3,
+    "items": [
+     {
+      "name": "Pantalla (presentación)",
+      "source_uuid": "0059ba24-4e59-45c8-b445-a5f9e4729c23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 2,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 225.0,
+       "y": 30.0
+      },
+      "pos_rel": {
+       "x": -1.2518517971038818,
+       "y": -0.9259259104728699
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 1470.0,
+       "y": 827.0
+      },
+      "bounds_rel": {
+       "x": 2.5037035942077637,
+       "y": 1.4092592000961304
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Marco · Solo presentación",
+      "source_uuid": "471b1627-8d7c-4bbd-b984-9effea5116e3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 2,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     },
+     {
+      "name": "Ponencia presentada",
+      "source_uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 3,
+      "group_item_backup": false,
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": [],
+    "libobs.show_scene_item.2": [],
+    "libobs.hide_scene_item.2": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "12 · Preguntas y respuestas",
+   "uuid": "280357cf-e38d-454f-b11d-57b929961634",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Preguntas",
+      "source_uuid": "8b9e2f0d-58b3-47aa-8fca-56654d36396a",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "13 · Receso",
+   "uuid": "fec3ada7-c95e-41fc-89b0-710121f6223c",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Receso",
+      "source_uuid": "1cac6ed8-003b-4712-9607-fba90952a2a3",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "14 · A continuación",
+   "uuid": "d865714b-8ca7-4dd1-8ce6-ddc2e6acca40",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · A continuación",
+      "source_uuid": "582f161d-fd9d-4f63-9a84-edb86b7c5d23",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "15 · Agenda",
+   "uuid": "7b08960a-9e76-48ec-8e00-ccd4cb034aca",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Agenda",
+      "source_uuid": "612535f8-3696-4e56-aa20-aa5285274c1f",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "16 · Patrocinadores",
+   "uuid": "246cbb64-4d17-49aa-994b-beb334c4955e",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Patrocinadores",
+      "source_uuid": "b151abc4-a00d-4739-a3b4-1b9437422d3a",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "17 · Dificultades técnicas",
+   "uuid": "e63be74a-25b2-4a8a-afd0-8429943af7c0",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Dificultades técnicas",
+      "source_uuid": "e5ccbcd3-4f4d-435b-a77a-820eed76e7df",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "18 · Cierre",
+   "uuid": "113f9d98-dd21-499c-b8b0-e6246b3a3d25",
+   "id": "scene",
+   "versioned_id": "scene",
+   "settings": {
+    "custom_size": false,
+    "id_counter": 1,
+    "items": [
+     {
+      "name": "Escena · Cierre",
+      "source_uuid": "4f566251-e811-42a0-9833-60bf77172c99",
+      "visible": true,
+      "locked": false,
+      "rot": 0.0,
+      "scale_ref": {
+       "x": 1920.0,
+       "y": 1080.0
+      },
+      "align": 5,
+      "bounds_type": 0,
+      "bounds_align": 0,
+      "bounds_crop": false,
+      "crop_left": 0,
+      "crop_top": 0,
+      "crop_right": 0,
+      "crop_bottom": 0,
+      "id": 1,
+      "group_item_backup": false,
+      "pos": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "pos_rel": {
+       "x": -1.7777777910232544,
+       "y": -1.0
+      },
+      "scale": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "scale_rel": {
+       "x": 1.0,
+       "y": 1.0
+      },
+      "bounds": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "bounds_rel": {
+       "x": 0.0,
+       "y": 0.0
+      },
+      "scale_filter": "disable",
+      "blend_method": "default",
+      "blend_type": "normal",
+      "show_transition": {
+       "duration": 0
+      },
+      "hide_transition": {
+       "duration": 0
+      },
+      "private_settings": {}
+     }
+    ]
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "OBSBasic.SelectScene": [],
+    "libobs.show_scene_item.1": [],
+    "libobs.hide_scene_item.1": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "canvas_uuid": "6c69626f-6273-4c00-9d88-c5136d61696e",
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Ponencia presentada",
+   "uuid": "a68646e0-311d-42d7-a1ec-3e17f254a343",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/ponencia.html",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": false,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  },
+  {
+   "prev_ver": 536936449,
+   "name": "Ponencia presentada (cámara completa)",
+   "uuid": "bb3c0dd8-812f-462f-933e-3a1c60275908",
+   "id": "browser_source",
+   "versioned_id": "browser_source",
+   "settings": {
+    "is_local_file": false,
+    "url": "file:///C:/Users/victo/Documents/CONTECS2026-Overlays/ponencia.html?b=84",
+    "width": 1920,
+    "height": 1080,
+    "shutdown": true,
+    "restart_when_active": false,
+    "css": "body { background-color: rgba(0, 0, 0, 0); margin: 0px auto; overflow: hidden; }",
+    "reroute_audio": false
+   },
+   "mixers": 0,
+   "sync": 0,
+   "flags": 0,
+   "volume": 1.0,
+   "balance": 0.5,
+   "enabled": true,
+   "muted": false,
+   "push-to-mute": false,
+   "push-to-mute-delay": 0,
+   "push-to-talk": false,
+   "push-to-talk-delay": 0,
+   "hotkeys": {
+    "libobs.mute": [],
+    "libobs.unmute": [],
+    "libobs.push-to-mute": [],
+    "libobs.push-to-talk": [],
+    "ObsBrowser.Refresh": []
+   },
+   "deinterlace_mode": 0,
+   "deinterlace_field_order": 0,
+   "monitoring_type": 0,
+   "private_settings": {}
+  }
+ ],
+ "groups": [],
+ "scene_order": [
+  {
+   "name": "01 · Iniciando pronto"
+  },
+  {
+   "name": "02 · ¡Ya comenzamos!"
+  },
+  {
+   "name": "03 · Cámara 1 completa"
+  },
+  {
+   "name": "04 · Cámara 2 completa"
+  },
+  {
+   "name": "05 · Presentación + cámara"
+  },
+  {
+   "name": "06 · Cámara + presentación (invertido)"
+  },
+  {
+   "name": "07 · Presentación + 2 cámaras"
+  },
+  {
+   "name": "08 · 2 cámaras + presentación (invertido)"
+  },
+  {
+   "name": "09 · Dos cámaras lado a lado"
+  },
+  {
+   "name": "10 · Dos cámaras (invertido)"
+  },
+  {
+   "name": "11 · Solo presentación"
+  },
+  {
+   "name": "12 · Preguntas y respuestas"
+  },
+  {
+   "name": "13 · Receso"
+  },
+  {
+   "name": "14 · A continuación"
+  },
+  {
+   "name": "15 · Agenda"
+  },
+  {
+   "name": "16 · Patrocinadores"
+  },
+  {
+   "name": "17 · Dificultades técnicas"
+  },
+  {
+   "name": "18 · Cierre"
+  }
+ ],
+ "current_scene": "02 · ¡Ya comenzamos!",
+ "current_program_scene": "02 · ¡Ya comenzamos!",
+ "canvases": [],
+ "current_transition": "Desvanecimiento",
+ "transition_duration": 600,
+ "transitions": [],
+ "quick_transitions": [],
+ "saved_projectors": [],
+ "preview_locked": false,
+ "scaling_enabled": false,
+ "scaling_level": -9,
+ "scaling_off_x": 0.0,
+ "scaling_off_y": 0.0,
+ "virtual-camera": {
+  "type2": 3
+ },
+ "modules": {
+  "auto-scene-switcher": {
+   "interval": 300,
+   "non_matching_scene": "",
+   "switch_if_not_matching": false,
+   "active": false,
+   "switches": []
+  },
+  "captions": {
+   "source": "",
+   "enabled": false,
+   "lang_id": 2058,
+   "provider": "mssapi"
+  },
+  "output-timer": {
+   "streamTimerHours": 0,
+   "streamTimerMinutes": 0,
+   "streamTimerSeconds": 0,
+   "recordTimerHours": 0,
+   "recordTimerMinutes": 0,
+   "recordTimerSeconds": 0,
+   "autoStartStreamTimer": false,
+   "autoStartRecordTimer": false,
+   "pauseRecordTimer": false
+  },
+  "scripts-tool": []
+ },
+ "resolution": {
+  "x": 1920,
+  "y": 1080
+ },
+ "version": 2
+}

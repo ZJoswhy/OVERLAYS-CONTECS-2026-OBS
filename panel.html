@@ -1,0 +1,932 @@
+<!doctype html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Panel CONTECS 2026</title>
+<style>
+  :root{--bg:#04170d;--panel:#0a2616;--panel2:#0f3220;--linea:#1d4d33;--txt:#e9f5ee;--sub:#9fc3ae;--acento:#22c55e;--lima:#a3f75b;--rojo:#f87171}
+  *{box-sizing:border-box}
+  body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 "Segoe UI",system-ui,sans-serif}
+  header{position:sticky;top:0;z-index:5;display:flex;gap:14px;align-items:center;padding:12px 24px;background:#062012;border-bottom:1px solid var(--linea)}
+  header h1{font-size:18px;margin:0;flex:1;letter-spacing:.02em;white-space:nowrap}
+  header h1 span{color:var(--acento)}
+  #estado{font-size:13px;color:var(--sub)}
+  button{font:inherit;cursor:pointer;border-radius:8px;border:1px solid var(--linea);background:var(--panel2);color:var(--txt);padding:7px 14px}
+  button:hover{border-color:var(--acento)}
+  button.prim{background:var(--acento);border-color:var(--acento);color:#04170d;font-weight:700}
+  button.peligro{color:var(--rojo)}
+  button.mini{padding:4px 9px;font-size:13px}
+  .wrap{display:grid;grid-template-columns:minmax(420px,560px) 1fr;gap:22px;padding:22px 24px;align-items:start}
+  @media(max-width:1100px){.wrap{grid-template-columns:1fr}}
+  section{background:var(--panel);border:1px solid var(--linea);border-radius:14px;padding:18px;margin-bottom:18px}
+  section h2{font-size:15px;margin:0 0 12px;color:var(--lima);letter-spacing:.04em;text-transform:uppercase}
+  label{display:block;font-size:12.5px;color:var(--sub);margin:10px 0 4px}
+  input[type=text],input[type=number],input[type=password],input:not([type]),select,textarea{width:100%;background:#061b0f;border:1px solid var(--linea);color:var(--txt);border-radius:8px;padding:8px 10px;font:inherit}
+  textarea{min-height:120px;resize:vertical}
+  input:focus,select:focus,textarea:focus{outline:2px solid var(--acento);outline-offset:-1px}
+  .fila2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  .fila3{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .item{background:var(--panel2);border:1px solid var(--linea);border-radius:10px;padding:12px;margin-bottom:10px}
+  .item .cab{display:flex;gap:6px;align-items:center;margin-bottom:4px}
+  .item .cab b{flex:1;color:var(--lima);font-size:13px}
+  .logo-prev{height:70px;min-width:120px;max-width:200px;overflow:hidden;background:#fff;border-radius:8px;display:flex;align-items:center;justify-content:center;padding:6px;color:#053a1c;font-weight:800;font-size:13px;text-align:center}
+  .logo-prev img{max-height:58px;max-width:200px}
+  .logo-prev.osc{background:#053a1c}
+  .flex{display:flex;gap:10px;align-items:center;flex-wrap:wrap}
+  .previa{position:sticky;top:76px}
+  .marco-previa{width:100%;aspect-ratio:16/9;border-radius:12px;overflow:hidden;border:1px solid var(--linea);position:relative;
+    background:repeating-conic-gradient(#2a2a3a 0 25%,#34344a 0 50%) 0 0/28px 28px}
+  .marco-previa iframe{position:absolute;left:0;top:0;width:1920px;height:1080px;border:0;transform-origin:0 0}
+  .ayuda{font-size:13px;color:var(--sub);margin-top:10px}
+  .ayuda code{color:var(--lima)}
+  input[type=color]{width:100%;height:38px;border:1px solid var(--linea);border-radius:8px;background:#061b0f;padding:3px}
+  .chk{display:flex;gap:8px;align-items:center;margin-top:12px;color:var(--txt);font-size:14px}
+
+  /* ---------- pestañas ---------- */
+  .tabs{display:flex;gap:4px;background:#04170d;border:1px solid var(--linea);border-radius:10px;padding:3px}
+  .tabs button{border:0;background:transparent;padding:6px 14px;border-radius:8px;font-weight:600;color:var(--sub)}
+  .tabs button.on{background:var(--acento);color:#04170d}
+  .vista[hidden]{display:none!important}
+  [hidden]{display:none!important}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:4px 10px;border-radius:999px;background:var(--panel2);border:1px solid var(--linea);font-size:12px;font-weight:600;white-space:nowrap}
+  .pill i{width:9px;height:9px;border-radius:50%;background:#555}
+  .pill.ok i{background:var(--acento)} .pill.err i{background:#ef4444}
+  .pill.vivo{background:#ef4444;border-color:#ef4444;color:#fff} .pill.vivo i{background:#fff;animation:pp 1s infinite}
+  @keyframes pp{50%{opacity:.3}}
+  header{flex-wrap:wrap}
+  /* ---------- deck ---------- */
+  #vDeck{padding:14px;display:grid;gap:12px;max-width:1400px;margin:0 auto;user-select:none;-webkit-user-select:none}
+  #vDeck section{margin:0;padding:12px}
+  #vDeck h2{font-size:12px;letter-spacing:.12em;margin-bottom:8px;display:flex;align-items:center;gap:8px}
+  #vDeck h2 small{color:var(--sub);letter-spacing:0;text-transform:none;font-weight:400}
+  #vDeck .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(122px,1fr));gap:8px}
+  #vDeck button{border-radius:10px;padding:8px}
+  #vDeck button:active{transform:scale(.97)}
+  #vDeck .key{min-height:74px;display:flex;flex-direction:column;align-items:flex-start;justify-content:space-between;text-align:left;position:relative;font-weight:600;font-size:13px;line-height:1.2}
+  #vDeck .key .n{font-size:11px;color:var(--sub);font-weight:700}
+  #vDeck .key.prog{background:#7f1d1d;border-color:#ef4444;box-shadow:0 0 0 2px #ef4444 inset}
+  #vDeck .key.prog .n{color:#fecaca}
+  #vDeck .key.prev{border-color:var(--acento);box-shadow:0 0 0 2px var(--acento) inset}
+  #vDeck .key .tag{position:absolute;top:6px;right:8px;font-size:10px;font-weight:800;letter-spacing:.08em}
+  #vDeck .grande{min-height:64px;font-size:16px;font-weight:700}
+  #vDeck .verde{background:var(--acento);border-color:var(--acento);color:#04170d}
+  #vDeck .rojo{background:#7f1d1d;border-color:#ef4444}
+  #vDeck .fila{display:flex;gap:8px;flex-wrap:wrap}
+  #vDeck .fila>*{flex:1}
+  #vDeck .exp{display:flex;flex-direction:column;align-items:flex-start;text-align:left;gap:2px;min-height:58px}
+  #vDeck .exp b{font-size:13px}#vDeck .exp small{color:var(--sub);font-size:11.5px}
+  #vDeck .exp.sel{border-color:var(--lima);box-shadow:0 0 0 2px var(--lima) inset}
+  #vDeck .armado{background:#f59e0b!important;border-color:#f59e0b!important;color:#000!important}
+  #vDeck .conn{display:grid;gap:8px;grid-template-columns:1fr 1fr auto}
+  #vDeck .nota{font-size:12px;color:var(--sub);margin-top:6px}
+  #vDeck .nota code{color:var(--lima)}
+  #vDeck .vacio{color:var(--sub);font-size:12.5px;padding:6px 2px}
+  #vDeck .dos{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+  @media(max-width:900px){#vDeck .dos{grid-template-columns:1fr}}
+  @media(max-width:520px){#vDeck .conn{grid-template-columns:1fr} header h1{font-size:15px}}
+  .chips{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:6px}
+  .chips button{padding:5px 10px;font-size:13px;border-radius:999px}
+  .chips button.on{background:var(--acento);border-color:var(--acento);color:#04170d;font-weight:700}
+  .bloque{border-top:1px dashed var(--linea);margin-top:12px;padding-top:4px}
+  #vDeck .cuentas{display:grid;grid-template-columns:auto 90px 1fr 1fr;gap:8px;align-items:center}
+  #vDeck .cuentas input,#vDeck .cuentas select{width:100%;background:#061b0f;border:1px solid var(--linea);color:var(--txt);border-radius:8px;padding:8px;font:inherit}
+  #vDeck .cuentas b{font-size:13px}
+</style>
+</head>
+<body>
+<header>
+  <h1>Panel <span>CONTECS 2026</span></h1>
+  <div class="tabs"><button data-tab="vDeck">🎛 En vivo</button><button data-tab="vConfig">⚙ Configurar</button></div>
+  <span class="pill" id="stConn"><i></i><span>OBS sin conexión</span></span>
+  <span class="pill" id="stStream"><i></i>Transmisión</span>
+  <span class="pill" id="stRec"><i></i>Grabación</span>
+  <label class="chk" style="margin:0;font-size:13px;color:var(--sub)"><input type="checkbox" id="autoGuardar" checked> Guardar solo</label>
+  <span id="estado">Sin cambios</span>
+  <button class="prim" id="guardar">Conectar datos.js</button>
+</header>
+
+
+<div id="vDeck" class="vista" hidden>
+  <section id="conexion">
+    <h2>Conexión a OBS <small>Herramientas → Ajustes del servidor WebSocket</small></h2>
+    <div class="conn">
+      <input id="url" placeholder="ws://127.0.0.1:4455">
+      <input id="pw" type="password" placeholder="Contraseña del servidor">
+      <button class="prim" id="conectar">Conectar</button>
+    </div>
+    <div class="nota" id="msgConn">Se recuerda en este equipo. Atajos: <code>1–9, 0</code> escenas · <code>P</code> mostrar ponencia · <code>O</code> ocultar · <code>N</code> o <code>→</code> siguiente ponencia · <code>Espacio</code> transición (modo estudio).</div>
+  </section>
+
+  <section>
+    <h2>Escenas <small id="modoTxt"></small></h2>
+    <div class="grid" id="escenas"><div class="vacio">Conecta con OBS para ver las escenas.</div></div>
+    <div class="fila" style="margin-top:8px" id="filaEstudio" hidden><button class="grande verde" id="transicionar">⇄ TRANSICIÓN (Espacio)</button></div>
+    <div class="fila" style="margin-top:8px"><button id="trCorte">Corte</button><button id="trFade">Desvanecer</button></div>
+  </section>
+
+
+  <section>
+    <h2>Cuentas regresivas y «A continuación» <small>se ve al instante en OBS al guardar</small></h2>
+    <div class="cuentas">
+      <b>Iniciando pronto</b><input type="number" min="0" step="1" id="dkMinInicio" title="Minutos"><button class="verde" id="dkGoInicio">▶ Iniciar cuenta</button><button id="dkHoraInicio">Usar hora exacta…</button>
+      <b>Receso</b><input type="number" min="0" step="1" id="dkMinReceso" title="Minutos"><button class="verde" id="dkGoReceso">▶ Iniciar cuenta</button><select id="dkSigReceso" title="A continuación"></select>
+    </div>
+    <div class="nota">«Iniciar cuenta» arranca el reloj ahora mismo con los minutos indicados (aunque la escena ya esté al aire). El menú de la derecha elige quién aparece en «A continuación» del receso.</div>
+  </section>
+  <div class="dos">
+    <section>
+      <h2>Tarjeta «Ponencia presentada por» <small id="ppModo"></small></h2>
+      <div class="fila">
+        <button class="grande verde" id="dkMostrar">▶ Mostrar (P)</button>
+        <button class="grande" id="dkOcultar">■ Ocultar (O)</button>
+      </div>
+      <h2 style="margin-top:12px">Ponencia en curso <small id="msgActual"></small></h2>
+      <div class="fila" style="margin-bottom:8px">
+        <button id="dkPrev">◀ Anterior</button>
+        <button class="verde" id="dkNext">Siguiente ponencia ▶</button>
+      </div>
+      <div class="fila" style="margin-bottom:8px">
+        <input id="dkBusca" placeholder="🔎 Buscar expositor o tema…" style="flex:2;background:#061b0f;border:1px solid var(--linea);color:var(--txt);border-radius:8px;padding:8px;font:inherit">
+        <select id="dkDia" style="flex:1;background:#061b0f;border:1px solid var(--linea);color:var(--txt);border-radius:8px;padding:8px;font:inherit"></select>
+      </div>
+      <div class="grid" id="dkExpo" style="max-height:420px;overflow:auto"></div>
+    </section>
+    <div style="display:grid;gap:12px;align-content:start">
+      <section>
+        <h2>Tarjetas de nombre <small id="tarjEscena"></small></h2>
+        <div class="grid" id="tarjetas"><div class="vacio">—</div></div>
+      </section>
+      <section>
+        <h2>Salida</h2>
+        <div class="fila">
+          <button class="grande" id="btnStream">● Iniciar transmisión</button>
+          <button class="grande" id="btnRec">● Iniciar grabación</button>
+        </div>
+        <div class="nota">Para detener se pide un segundo toque (evita cortes accidentales).</div>
+      </section>
+    </div>
+  </div>
+</div>
+
+<div id="vConfig" class="vista wrap" hidden>
+  <div>
+    <section>
+      <h2>En vivo ahora</h2>
+      <label>Ponencia en curso (se muestra en los marcos de presentación y cámaras)</label>
+      <select id="actual"></select>
+      <div class="fila2">
+        <div><label>Nombre sobre la Cámara 1 (vacío = no se muestra)</label><input id="c1" placeholder="Ej.: Moderador · Ana Pérez"></div>
+        <div><label>Nombre sobre la Cámara 2</label><input id="c2" placeholder="Ej.: Expositor"></div>
+      </div>
+      <label class="chk"><input type="checkbox" id="mostrarPatrocinadores"> Mostrar patrocinadores en los marcos</label>
+    </section>
+
+    <section>
+      <h2>Tarjeta «Ponencia presentada por»</h2>
+      <div class="flex">
+        <button class="prim" id="ppMostrar">▶ Mostrar ahora</button>
+        <button id="ppOcultar">■ Ocultar ahora</button>
+      </div>
+      <label class="chk"><input type="checkbox" id="ppAuto"> Aparecer automáticamente</label>
+      <div class="fila2">
+        <div><label>Cada cuántos minutos</label><input type="number" min="0.5" step="0.5" id="ppCada"></div>
+        <div><label>Segundos en pantalla (0 = se queda)</label><input type="number" min="0" step="1" id="ppDur"></div>
+      </div>
+      <label>Texto pequeño de la tarjeta</label><input id="bannerKicker">
+      <div class="ayuda">Muestra el expositor de la <b>ponencia en curso</b>. Con OBS conectado (pestaña En vivo) reacciona al instante; si no, al guardar (~2 s).</div>
+    </section>
+
+    <section>
+      <h2>Patrocinadores e íconos</h2>
+      <div id="listaPatro"></div>
+      <button id="addPatro">+ Agregar patrocinador</button>
+      <div class="ayuda">Sube PNG (mejor con fondo transparente). Se muestran en grupos de 3 que van rotando en los marcos y todos en la escena "Patrocinadores".</div>
+    </section>
+
+    <section>
+      <h2>Logos junto a CONTECS</h2>
+      <div id="listaLogosM"></div>
+      <button id="addLogoM">+ Agregar logo</button>
+      <div class="ayuda">Aparecen debajo del logo de CONTECS, en el recuadro junto a la cámara (hasta 6). Sube PNG, mejor con fondo transparente. Ejemplo: UTP y la Facultad.</div>
+    </section>
+
+    <section>
+      <h2>Expositores <small style="color:var(--sub);text-transform:none;letter-spacing:0;font-weight:400" id="cuentaExpo"></small></h2>
+      <div class="flex" style="margin-bottom:10px">
+        <button class="prim" id="impBtn">📥 Importar Excel / CSV</button>
+        <button id="plantillaBtn">📄 Descargar plantilla</button>
+        <input type="file" id="impFile" accept=".xlsx,.csv,.txt" hidden>
+      </div>
+      <div id="impMsg" class="ayuda" style="margin-top:0"></div>
+      <input id="buscaExpo" placeholder="🔎 Buscar por nombre, tema, salón, día…" style="margin-bottom:10px">
+      <div id="listaExpo"></div>
+      <button id="addExpo">+ Agregar expositor</button>
+      <div class="ayuda">El número <code>#</code> es el que usan las tarjetas de nombre en OBS (<code>tarjeta.html?id=3</code>). Usa <code>id=actual</code> para que la tarjeta muestre siempre la ponencia en curso.</div>
+    </section>
+
+    <section>
+      <h2>Evento y apariencia</h2>
+      <div class="fila2">
+        <div><label>Nombre del evento</label><input id="evento"></div>
+        <div><label>Hashtag</label><input id="hashtag"></div>
+      </div>
+      <label>Lema / subtítulo</label><input id="lema">
+      <label>Fechas</label><input id="fechas">
+      <div class="fila3">
+        <div><label>Fondo de marcos</label><input type="color" id="colFondo"></div>
+        <div><label>Acento</label><input type="color" id="colAcento"></div>
+        <div><label>Acento 2</label><input type="color" id="colAcento2"></div>
+      </div>
+      <label>Logo del evento (PNG blanco con fondo transparente)</label>
+      <div class="flex"><div class="logo-prev osc" id="logoPrev"></div>
+        <input type="file" accept="image/*" id="logoFile" hidden>
+        <button id="logoBtn">Subir logo</button><button id="logoQuitar" class="mini">Usar logo.png</button></div>
+    </section>
+
+    <section>
+      <h2>Escenas de pantalla completa</h2>
+      <div class="chips" id="escChips"></div>
+      <div id="escEditor"></div>
+      <div class="ayuda">Deja un campo vacío para usar el texto por defecto (se ve en gris). En el título, lo que pongas entre <code>*asteriscos*</code> sale en verde.</div>
+    </section>
+
+    <section>
+      <h2>Mensajes de la barra inferior</h2>
+      <textarea id="mensajes" placeholder="Un mensaje por línea"></textarea>
+    </section>
+  </div>
+
+  <div class="previa">
+    <section>
+      <h2>Vista previa · las 18 escenas de OBS</h2>
+      <div class="flex" style="margin-bottom:10px">
+        <select id="layoutPrev" style="flex:1"></select>
+      </div>
+      <div class="marco-previa" id="cajaPrev"><iframe id="ifr"></iframe><iframe id="ifrPP"></iframe></div>
+      <label class="chk"><input type="checkbox" id="verPP" checked> Mostrar la tarjeta de ponencia en la previa</label>
+      <div class="ayuda">La previa se actualiza al instante. Al pulsar <b>Guardar datos.js</b> (o Ctrl+S), OBS toma los cambios solo en unos segundos.
+        La primera vez elige el archivo <code>datos.js</code> de esta carpeta para reemplazarlo; después se guarda directo.</div>
+    </section>
+  </div>
+</div>
+
+<script src="datos.js"></script>
+<script src="layouts.js"></script>
+<script>
+const $ = s => document.querySelector(s);
+const esc = s => String(s ?? "").replace(/[&<>"]/g, c => ({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+const D = JSON.parse(JSON.stringify(window.CONTECS || {}));
+D.colores = D.colores || {fondo:"#053a1c",acento:"#22c55e",acento2:"#a3f75b"};
+D.camaras = D.camaras || {c1:"",c2:""};
+D.expositores = D.expositores || []; D.patrocinadores = D.patrocinadores || []; D.mensajes = D.mensajes || [];
+D.logosMarco = D.logosMarco || [{nombre:"Universidad Tecnológica de Panamá", img:""},{nombre:"FISC", img:""}];
+let sucio = false, handle = null;
+
+/* ---------- campos simples ---------- */
+const simples = ["evento","lema","fechas","hashtag","bannerKicker"];
+simples.forEach(k => { $("#"+k).value = D[k] || ""; $("#"+k).oninput = e => { D[k] = e.target.value; cambio(); }; });
+$("#c1").value = D.camaras.c1 || ""; $("#c1").oninput = e => { D.camaras.c1 = e.target.value; cambio(); };
+$("#c2").value = D.camaras.c2 || ""; $("#c2").oninput = e => { D.camaras.c2 = e.target.value; cambio(); };
+$("#mostrarPatrocinadores").checked = D.mostrarPatrocinadores !== false;
+$("#mostrarPatrocinadores").onchange = e => { D.mostrarPatrocinadores = e.target.checked; cambio(); };
+[["colFondo","fondo"],["colAcento","acento"],["colAcento2","acento2"]].forEach(([id,k])=>{
+  $("#"+id).value = D.colores[k]; $("#"+id).oninput = e => { D.colores[k] = e.target.value; cambio(); };
+});
+$("#mensajes").value = D.mensajes.join("\n");
+$("#mensajes").oninput = e => { D.mensajes = e.target.value.split("\n").map(s=>s.trim()).filter(Boolean); cambio(); };
+$("#actual").onchange = e => setActual(Number(e.target.value));
+
+/* ---------- tarjeta de ponencia ---------- */
+D.ponencia = Object.assign({auto:true,cadaMin:5,durSeg:20}, D.ponencia||{});
+D.ponenciaCmd = D.ponenciaCmd || {accion:"",t:0};
+$("#ppAuto").checked = D.ponencia.auto; $("#ppAuto").onchange = e => { D.ponencia.auto = e.target.checked; cambio(); };
+$("#ppCada").value = D.ponencia.cadaMin; $("#ppCada").oninput = e => { D.ponencia.cadaMin = Math.max(0, Number(e.target.value)||0); cambio(); };
+$("#ppDur").value = D.ponencia.durSeg; $("#ppDur").oninput = e => { D.ponencia.durSeg = Math.max(0, Number(e.target.value)||0); cambio(); };
+$("#ppMostrar").onclick = () => ponenciaAccion("mostrar");
+$("#ppOcultar").onclick = () => ponenciaAccion("ocultar");
+
+
+/* ---------- escenas de pantalla completa ---------- */
+D.escenas = D.escenas || {};
+const ESC = [
+  {k:"inicio", n:"01 · Iniciando pronto", ph:{kicker:"Transmisión en vivo", titulo:"Iniciando *pronto*", sub:"(lema del evento)", alTerminar:"¡Comenzamos en un momento!"}, cuenta:true, defMin:10},
+  {k:"bienvenida", n:"02 · ¡Ya comenzamos!", ph:{kicker:"(fechas)", titulo:"¡Ya *comenzamos!*", sub:"Bienvenidos a (evento)"}},
+  {k:"preguntas", n:"12 · Preguntas", ph:{kicker:"Tu turno", titulo:"Preguntas y *respuestas*", sub:"Levanta la mano o acércate al micrófono · (hashtag)"}},
+  {k:"receso", n:"13 · Receso", ph:{kicker:"Volvemos enseguida", titulo:"*Receso*", sub:"Aprovecha para recorrer los salones y stands", alTerminar:"¡Volvemos en un momento!"}, cuenta:true, defMin:15, sig:true},
+  {k:"siguiente", n:"14 · A continuación", ph:{kicker:"A continuación", titulo:"Próxima *conferencia*", sub:""}, sig:true},
+  {k:"agenda", n:"15 · Agenda", ph:{kicker:"(fechas)", titulo:"*Agenda* del día", sub:""}, max:true},
+  {k:"patrocinadores", n:"16 · Patrocinadores", ph:{kicker:"Gracias a quienes lo hacen posible", titulo:"*Aliados* y patrocinadores", sub:""}},
+  {k:"tecnico", n:"17 · Dificultades técnicas", ph:{kicker:"Un momento, por favor", titulo:"Ajustando la *señal*", sub:"La transmisión continuará en breve"}},
+  {k:"cierre", n:"18 · Cierre", ph:{kicker:"Hasta la próxima", titulo:"¡Gracias por *acompañarnos!*", sub:"(lema) · (hashtag)"}}
+];
+let escSel = "inicio";
+function escData(k){ return (D.escenas[k] ||= {}); }
+function opcionesExpo(sel){ return '<option value="">— automático: la siguiente a la ponencia en curso —</option>' + D.expositores.map(e=>`<option value="${e.id}" ${String(e.id)===String(sel)?"selected":""}>#${e.id} · ${esc(e.nombre)} — ${esc(e.tema)}</option>`).join(""); }
+function pintaEscenasConfig(){
+  $("#escChips").innerHTML = ESC.map(e=>`<button data-esc="${e.k}" class="${e.k===escSel?"on":""}">${esc(e.n)}</button>`).join("");
+  const def = ESC.find(e=>e.k===escSel), o = escData(escSel);
+  let h = `<label>Texto pequeño (arriba)</label><input data-f="kicker" value="${esc(o.kicker||"")}" placeholder="${esc(def.ph.kicker)}">
+    <label>Título</label><input data-f="titulo" value="${esc(o.titulo||"")}" placeholder="${esc(def.ph.titulo)}">
+    <label>Subtítulo</label><input data-f="sub" value="${esc(o.sub||"")}" placeholder="${esc(def.ph.sub||"(sin subtítulo)")}">`;
+  if(def.cuenta){
+    h += `<div class="bloque"><label class="chk" style="margin-top:6px"><b style="color:var(--lima)">Cuenta regresiva</b></label>
+      <div class="fila2"><div><label>Minutos</label><input type="number" min="0" step="1" data-f="min" value="${esc(o.min??"")}" placeholder="${def.defMin}"></div>
+      <div><label>…o hasta una hora exacta (HH:MM, 24 h)</label><input data-f="hora" value="${esc(o.hora||"")}" placeholder="ej. 08:30"></div></div>
+      <label>Texto al llegar a cero</label><input data-f="alTerminar" value="${esc(o.alTerminar||"")}" placeholder="${esc(def.ph.alTerminar)}">
+      <div class="flex" style="margin-top:10px"><button class="prim" data-acc="go">▶ Iniciar cuenta ahora</button><button data-acc="stop">↺ Que empiece al entrar a la escena</button></div>
+      <div class="ayuda" id="escEstado">${o.inicio ? "Cuenta iniciada a las " + new Date(o.inicio).toLocaleTimeString("es-PA") : "La cuenta arranca cada vez que la escena se pone al aire."}</div></div>`;
+  }
+  if(def.sig) h += `<label>Quién aparece en «A continuación»</label><select data-f="sig">${opcionesExpo(o.sig)}</select>`;
+  if(def.max) h += `<label>Máximo de filas</label><input type="number" min="1" max="8" data-f="max" value="${esc(o.max??"")}" placeholder="6">`;
+  h += `<div class="flex" style="margin-top:10px"><button class="mini" data-acc="reset">Restablecer textos por defecto</button><button class="mini" data-acc="ver">Ver en la vista previa</button></div>`;
+  $("#escEditor").innerHTML = h;
+}
+$("#escChips").onclick = e => { const b = e.target.closest("[data-esc]"); if(!b) return; escSel = b.dataset.esc; pintaEscenasConfig(); verPrevia("escena", escSel); };
+$("#escEditor").addEventListener("input", e => {
+  const f = e.target.dataset.f; if(!f) return;
+  const o = escData(escSel); let v = e.target.value;
+  if(f==="min"||f==="max") v = v==="" ? "" : Number(v);
+  if(f==="sig") v = v==="" ? "" : Number(v);
+  o[f] = v; if(f==="min"||f==="hora") delete o.inicio;
+  cambio(); pintaDeckCuentas();
+});
+$("#escEditor").addEventListener("change", e => { if(e.target.tagName==="SELECT") e.target.dispatchEvent(new Event("input",{bubbles:true})); });
+$("#escEditor").addEventListener("click", e => {
+  const acc = e.target.dataset.acc; if(!acc) return;
+  const o = escData(escSel);
+  if(acc==="go"){ o.inicio = Date.now(); delete o.hora; }
+  if(acc==="stop"){ delete o.inicio; }
+  if(acc==="reset"){ D.escenas[escSel] = {}; }
+  if(acc==="ver"){ verPrevia("escena", escSel); return; }
+  pintaEscenasConfig(); pintaDeckCuentas(); cambio();
+});
+
+/* Deck: cuentas rápidas */
+function pintaDeckCuentas(){
+  $("#dkMinInicio").value = escData("inicio").min ?? ""; $("#dkMinInicio").placeholder = "10";
+  $("#dkMinReceso").value = escData("receso").min ?? ""; $("#dkMinReceso").placeholder = "15";
+  $("#dkSigReceso").innerHTML = opcionesExpo(escData("receso").sig);
+}
+function iniciarCuenta(k, inp){
+  const o = escData(k); if(inp.value!=="") o.min = Number(inp.value);
+  o.inicio = Date.now(); delete o.hora; cambio(); if(escSel===k) pintaEscenasConfig();
+  if(!handle) $("#estado").textContent = "Pulsa «Conectar datos.js» para que OBS lo reciba";
+}
+$("#dkGoInicio").onclick = () => iniciarCuenta("inicio", $("#dkMinInicio"));
+$("#dkGoReceso").onclick = () => iniciarCuenta("receso", $("#dkMinReceso"));
+$("#dkHoraInicio").onclick = () => { verTab("vConfig"); escSel="inicio"; pintaEscenasConfig(); verPrevia("escena","inicio"); setTimeout(()=>{ const i=document.querySelector('#escEditor [data-f=hora]'); i && i.focus(); },100); };
+$("#dkSigReceso").onchange = e => { escData("receso").sig = e.target.value===""?"":Number(e.target.value); cambio(); if(escSel==="receso") pintaEscenasConfig(); };
+
+/* ---------- imágenes a dataURL (redimensionadas) ---------- */
+function leerImagen(file, maxW=700, maxH=320){
+  return new Promise((ok,err)=>{
+    const fr = new FileReader();
+    fr.onload = () => { const im = new Image(); im.onload = () => {
+      const k = Math.min(1, maxW/im.width, maxH/im.height);
+      const c = document.createElement("canvas"); c.width = Math.round(im.width*k); c.height = Math.round(im.height*k);
+      c.getContext("2d").drawImage(im,0,0,c.width,c.height); ok(c.toDataURL("image/png"));
+    }; im.onerror = err; im.src = fr.result; };
+    fr.onerror = err; fr.readAsDataURL(file);
+  });
+}
+function pintaLogo(){ $("#logoPrev").innerHTML = `<img src="${D.logo || "logo.png"}" onerror="this.replaceWith('CONTECS 2026')">`; }
+$("#logoBtn").onclick = () => $("#logoFile").click();
+$("#logoFile").onchange = async e => { if(!e.target.files[0]) return; D.logo = await leerImagen(e.target.files[0], 1000, 260); pintaLogo(); cambio(); };
+$("#logoQuitar").onclick = () => { D.logo = ""; pintaLogo(); cambio(); };
+
+/* ---------- expositores ---------- */
+function pintaExpo(){
+  $("#listaExpo").innerHTML = D.expositores.map((e,i)=>`
+    <div class="item" data-i="${i}">
+      <div class="cab"><b>#${e.id}</b>
+        <button class="mini" data-acc="sube">↑</button><button class="mini" data-acc="baja">↓</button>
+        <button class="mini peligro" data-acc="borra">Quitar</button></div>
+      <label>Nombre</label><input data-k="nombre" value="${esc(e.nombre)}">
+      <label>Cargo · institución</label><input data-k="cargo" value="${esc(e.cargo)}">
+      <label>Título de la ponencia</label><input data-k="tema" value="${esc(e.tema)}">
+      <div class="fila3"><div><label>Día</label><input data-k="dia" value="${esc(e.dia)}"></div>
+        <div><label>Hora</label><input data-k="hora" value="${esc(e.hora)}"></div>
+        <div><label>Salón</label><input data-k="salon" value="${esc(e.salon)}"></div></div>
+    </div>`).join("");
+  $("#cuentaExpo").textContent = "· " + D.expositores.length + " en total";
+  filtraConfig();
+  pintaDeckExpo();
+  $("#actual").innerHTML = D.expositores.map(e=>`<option value="${e.id}" ${String(e.id)===String(D.actual)?"selected":""}>#${e.id} · ${esc(e.tema)} — ${esc(e.nombre)}</option>`).join("");
+}
+const textoExpo = e => [e.id,e.nombre,e.cargo,e.tema,e.dia,e.hora,e.salon].join(" ").toLowerCase();
+function filtraConfig(){
+  const q = ($("#buscaExpo").value||"").toLowerCase().trim();
+  document.querySelectorAll("#listaExpo .item").forEach(it => { it.hidden = q && !textoExpo(D.expositores[it.dataset.i]).includes(q); });
+}
+$("#buscaExpo").oninput = filtraConfig;
+$("#listaExpo").addEventListener("input", e => {
+  const it = e.target.closest(".item"), k = e.target.dataset.k; if(!it || !k) return;
+  D.expositores[it.dataset.i][k] = e.target.value; cambio(false);
+  const sel = $("#actual"); const ex = D.expositores[it.dataset.i]; const op = [...sel.options].find(o=>o.value==String(ex.id));
+  if(op) op.textContent = `#${ex.id} · ${ex.tema} — ${ex.nombre}`;
+});
+$("#listaExpo").addEventListener("click", e => {
+  const acc = e.target.dataset.acc; if(!acc) return;
+  const i = Number(e.target.closest(".item").dataset.i), L = D.expositores;
+  if(acc==="borra" && confirm("¿Quitar a "+L[i].nombre+"?")) L.splice(i,1);
+  if(acc==="sube" && i>0) [L[i-1],L[i]] = [L[i],L[i-1]];
+  if(acc==="baja" && i<L.length-1) [L[i+1],L[i]] = [L[i],L[i+1]];
+  pintaExpo(); cambio();
+});
+$("#addExpo").onclick = () => {
+  const id = Math.max(0, ...D.expositores.map(e=>Number(e.id)||0)) + 1;
+  D.expositores.push({id, nombre:"Nombre del expositor", cargo:"Cargo · Institución", tema:"Título de la conferencia", hora:""});
+  pintaExpo(); cambio();
+};
+
+
+/* ---------- importar Excel (.xlsx) o CSV ---------- */
+async function unzip(buf){
+  const dv = new DataView(buf), u8 = new Uint8Array(buf), files = {};
+  let eocd = -1; for(let i=buf.byteLength-22; i>=Math.max(0,buf.byteLength-70000); i--){ if(dv.getUint32(i,true)===0x06054b50){ eocd=i; break; } }
+  if(eocd<0) throw new Error("El archivo no parece un Excel (.xlsx) válido.");
+  let p = dv.getUint32(eocd+16,true); const n = dv.getUint16(eocd+10,true), dec = new TextDecoder();
+  for(let k=0;k<n;k++){
+    const metodo = dv.getUint16(p+10,true), tam = dv.getUint32(p+20,true), ln = dv.getUint16(p+28,true), le = dv.getUint16(p+30,true), lc = dv.getUint16(p+32,true), off = dv.getUint32(p+42,true);
+    const nombre = dec.decode(u8.subarray(p+46,p+46+ln));
+    const inicio = off + 30 + dv.getUint16(off+26,true) + dv.getUint16(off+28,true);
+    files[nombre] = {metodo, datos: u8.subarray(inicio, inicio+tam)};
+    p += 46 + ln + le + lc;
+  }
+  return async nombre => {
+    const f = files[nombre]; if(!f) return null;
+    if(f.metodo===0) return dec.decode(f.datos);
+    const st = new Blob([f.datos]).stream().pipeThrough(new DecompressionStream("deflate-raw"));
+    return await new Response(st).text();
+  };
+}
+function colIdx(ref){ let n=0; for(const ch of ref.replace(/\d+/g,"")) n = n*26 + (ch.charCodeAt(0)-64); return n-1; }
+function excelHora(v){ const t = Math.round((v%1)*1440), h = Math.floor(t/60), m = t%60; return (h%12||12) + ":" + String(m).padStart(2,"0") + (h<12?" a. m.":" p. m."); }
+function excelFecha(v){ const d = new Date(Math.round((v-25569)*86400000)); return String(d.getUTCDate()).padStart(2,"0")+"/"+String(d.getUTCMonth()+1).padStart(2,"0"); }
+async function leerXlsx(buf){
+  const leer = await unzip(buf), xml = t => new DOMParser().parseFromString(t,"application/xml");
+  const ss = await leer("xl/sharedStrings.xml"); const comp = [];
+  if(ss) xml(ss).querySelectorAll("si").forEach(si => comp.push([...si.querySelectorAll("t")].map(t=>t.textContent).join("")));
+  let ruta = "xl/worksheets/sheet1.xml";
+  const wb = await leer("xl/workbook.xml"), rels = await leer("xl/_rels/workbook.xml.rels");
+  if(wb && rels){ const h = xml(wb).querySelector("sheet"); const rid = h && (h.getAttribute("r:id") || h.getAttributeNS("http://schemas.openxmlformats.org/officeDocument/2006/relationships","id"));
+    const r = rid && [...xml(rels).querySelectorAll("Relationship")].find(x=>x.getAttribute("Id")===rid);
+    if(r){ const t = r.getAttribute("Target"); ruta = t.startsWith("/") ? t.slice(1) : "xl/" + t.replace(/^\.\//,""); } }
+  const hoja = await leer(ruta); if(!hoja) throw new Error("No encontré la primera hoja del Excel.");
+  const filas = [];
+  xml(hoja).querySelectorAll("sheetData row").forEach(row => {
+    const f = [];
+    row.querySelectorAll("c").forEach(c => {
+      const t = c.getAttribute("t"), v = c.querySelector("v"), is = c.querySelector("is");
+      let val = "";
+      if(t==="s") val = comp[Number(v&&v.textContent)] ?? "";
+      else if(t==="inlineStr") val = is ? [...is.querySelectorAll("t")].map(x=>x.textContent).join("") : "";
+      else if(v) val = t==="str"||t==="b" ? v.textContent : Number(v.textContent);
+      f[colIdx(c.getAttribute("r"))] = val;
+    });
+    filas.push(f);
+  });
+  return filas;
+}
+function leerCsv(txt){
+  const sep = (txt.split("\n")[0].match(/;/g)||[]).length > (txt.split("\n")[0].match(/,/g)||[]).length ? ";" : ",";
+  const filas = []; let f = [], c = "", q = false;
+  for(let i=0;i<txt.length;i++){ const ch = txt[i];
+    if(q){ if(ch==='"'){ if(txt[i+1]==='"'){ c+='"'; i++; } else q=false; } else c+=ch; }
+    else if(ch==='"') q=true; else if(ch===sep){ f.push(c); c=""; } else if(ch==="\n"){ f.push(c.replace(/\r$/,"")); filas.push(f); f=[]; c=""; } else c+=ch; }
+  if(c||f.length){ f.push(c); filas.push(f); }
+  return filas;
+}
+const COLS = {
+  id:["id","#","numero","número","no","nº","n°"],
+  nombre:["nombre","nombres","expositor","expositora","ponente","conferencista","name","nombre completo"],
+  cargo:["cargo","institucion","institución","empresa","cargo / institucion","cargo / institución","cargo · institución","afiliacion","afiliación","organizacion","organización"],
+  tema:["tema","titulo","título","ponencia","conferencia","charla","titulo de la ponencia","título de la ponencia","title"],
+  dia:["dia","día","fecha","date"],
+  hora:["hora","horario","inicio","hora inicio","time"],
+  salon:["salon","salón","aula","sala","lugar","ubicacion","ubicación"]
+};
+const norm = t => String(t??"").toLowerCase().normalize("NFD").replace(/[̀-ͯ]/g,"").replace(/\s+/g," ").trim();
+function filasAExpositores(filas){
+  const fi = filas.findIndex(f => f && f.some(c => Object.values(COLS).flat().map(norm).includes(norm(c))));
+  if(fi<0) throw new Error("No encontré los encabezados. La primera fila debe tener columnas como Nombre, Cargo, Tema, Día, Hora, Salón.");
+  const mapa = {}; filas[fi].forEach((h,i) => { const n = norm(h); for(const [k,al] of Object.entries(COLS)) if(mapa[k]===undefined && al.map(norm).includes(n)) mapa[k]=i; });
+  if(mapa.nombre===undefined) throw new Error("Falta la columna «Nombre».");
+  const out = [];
+  filas.slice(fi+1).forEach(f => {
+    if(!f || !f.some(c => String(c??"").trim())) return;
+    const g = k => mapa[k]===undefined ? "" : f[mapa[k]];
+    let hora = g("hora"), dia = g("dia");
+    if(typeof hora==="number") hora = excelHora(hora);
+    if(typeof dia==="number") dia = dia>59 ? excelFecha(dia) : String(dia);
+    const e = {nombre:String(g("nombre")).trim(), cargo:String(g("cargo")).trim(), tema:String(g("tema")).trim(), dia:String(dia).trim(), hora:String(hora).trim(), salon:String(g("salon")).trim()};
+    const id = Number(g("id")); if(id) e.id = id;
+    if(e.nombre) out.push(e);
+  });
+  return out;
+}
+$("#impBtn").onclick = () => $("#impFile").click();
+$("#impFile").onchange = async ev => {
+  const file = ev.target.files[0]; ev.target.value = ""; if(!file) return;
+  const msg = $("#impMsg"); msg.style.color = "";
+  try{
+    const filas = /\.xlsx$/i.test(file.name) ? await leerXlsx(await file.arrayBuffer()) : leerCsv(await file.text());
+    const nuevos = filasAExpositores(filas);
+    if(!nuevos.length) throw new Error("No encontré filas con nombre.");
+    const reemplazar = confirm(`Encontré ${nuevos.length} expositores en «${file.name}».\n\nAceptar = REEMPLAZAR la lista actual (${D.expositores.length}).\nCancelar = AGREGARLOS al final.`);
+    let base = reemplazar ? [] : D.expositores.slice();
+    const usados = new Set(base.map(e=>Number(e.id)));
+    let sig = Math.max(0, ...base.map(e=>Number(e.id)||0), ...nuevos.map(e=>Number(e.id)||0)) + 1;
+    nuevos.forEach(e => { if(!e.id || usados.has(e.id)) e.id = sig++; usados.add(e.id); base.push(e); });
+    D.expositores = base;
+    if(!D.expositores.some(e=>String(e.id)===String(D.actual))) D.actual = D.expositores[0].id;
+    pintaExpo(); cambio();
+    msg.innerHTML = `✓ ${nuevos.length} expositores ${reemplazar?"importados (lista reemplazada)":"agregados"}. Total: ${D.expositores.length}.` + (handle ? "" : " <b>Pulsa «Conectar datos.js» para guardarlos.</b>");
+  }catch(err){ msg.style.color = "#f87171"; msg.textContent = "No se pudo importar: " + err.message; }
+};
+$("#plantillaBtn").onclick = () => {
+  const cab = ["ID","Nombre","Cargo / institución","Título de la ponencia","Día","Hora","Salón"];
+  const ej = D.expositores.length ? D.expositores.map(e=>[e.id,e.nombre,e.cargo,e.tema,e.dia||"",e.hora||"",e.salon||""]) : [[1,"Ana Pérez","Ingeniera · Empresa X","IA en la educación","19/10","9:00 a. m.","Auditorio"]];
+  const q = v => '"' + String(v??"").replace(/"/g,'""') + '"';
+  const csv = "﻿" + [cab,...ej].map(f=>f.map(q).join(";")).join("\r\n");
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([csv],{type:"text/csv"})); a.download = "expositores_CONTECS2026.csv"; a.click();
+};
+
+/* ---------- patrocinadores ---------- */
+function pintaPatro(){
+  $("#listaPatro").innerHTML = D.patrocinadores.map((p,i)=>`
+    <div class="item" data-i="${i}">
+      <div class="flex">
+        <div class="logo-prev">${p.img?`<img src="${p.img}">`:esc(p.nombre)}</div>
+        <div style="flex:1;min-width:160px"><label style="margin-top:0">Nombre</label><input data-k="nombre" value="${esc(p.nombre)}"></div>
+      </div>
+      <div class="flex" style="margin-top:8px">
+        <input type="file" accept="image/*" hidden data-file>
+        <button class="mini" data-acc="img">${p.img?"Cambiar imagen":"Subir imagen"}</button>
+        ${p.img?'<button class="mini" data-acc="sinimg">Quitar imagen</button>':""}
+        <span style="flex:1"></span>
+        <button class="mini" data-acc="sube">↑</button><button class="mini" data-acc="baja">↓</button>
+        <button class="mini peligro" data-acc="borra">Quitar</button>
+      </div>
+    </div>`).join("");
+}
+$("#listaPatro").addEventListener("input", e => {
+  const it = e.target.closest(".item"); if(!it || e.target.dataset.k!=="nombre") return;
+  D.patrocinadores[it.dataset.i].nombre = e.target.value; cambio(false);
+});
+$("#listaPatro").addEventListener("click", e => {
+  const acc = e.target.dataset.acc; if(!acc) return;
+  const it = e.target.closest(".item"), i = Number(it.dataset.i), L = D.patrocinadores;
+  if(acc==="img"){ it.querySelector("[data-file]").click(); return; }
+  if(acc==="sinimg") L[i].img = "";
+  if(acc==="borra" && confirm("¿Quitar "+(L[i].nombre||"este patrocinador")+"?")) L.splice(i,1);
+  if(acc==="sube" && i>0) [L[i-1],L[i]] = [L[i],L[i-1]];
+  if(acc==="baja" && i<L.length-1) [L[i+1],L[i]] = [L[i],L[i+1]];
+  pintaPatro(); cambio();
+});
+$("#listaPatro").addEventListener("change", async e => {
+  if(!e.target.matches("[data-file]") || !e.target.files[0]) return;
+  const i = Number(e.target.closest(".item").dataset.i);
+  D.patrocinadores[i].img = await leerImagen(e.target.files[0]);
+  if(!D.patrocinadores[i].nombre) D.patrocinadores[i].nombre = e.target.files[0].name.replace(/\.[^.]+$/,"");
+  pintaPatro(); cambio();
+});
+$("#addPatro").onclick = () => { D.patrocinadores.push({nombre:"Nuevo patrocinador", img:""}); pintaPatro(); cambio(); };
+
+/* ---------- logos junto a CONTECS (recuadro del marco) ---------- */
+(function(){
+  const cont = $("#listaLogosM"), L = () => D.logosMarco;
+  const pinta = () => { cont.innerHTML = L().map((p,i)=>`
+    <div class="item" data-i="${i}">
+      <div class="flex">
+        <div class="logo-prev">${p.img?`<img src="${p.img}">`:esc(p.nombre)}</div>
+        <div style="flex:1;min-width:160px"><label style="margin-top:0">Nombre</label><input data-k="nombre" value="${esc(p.nombre)}"></div>
+      </div>
+      <div class="flex" style="margin-top:8px">
+        <input type="file" accept="image/*" hidden data-file>
+        <button class="mini" data-acc="img">${p.img?"Cambiar imagen":"Subir imagen"}</button>
+        ${p.img?'<button class="mini" data-acc="sinimg">Quitar imagen</button>':""}
+        <span style="flex:1"></span>
+        <button class="mini" data-acc="sube">↑</button><button class="mini" data-acc="baja">↓</button>
+        <button class="mini peligro" data-acc="borra">Quitar</button>
+      </div>
+    </div>`).join(""); };
+  cont.addEventListener("input", e => { const it = e.target.closest(".item"); if(!it || e.target.dataset.k!=="nombre") return; L()[it.dataset.i].nombre = e.target.value; cambio(false); });
+  cont.addEventListener("click", e => {
+    const acc = e.target.dataset.acc; if(!acc) return;
+    const it = e.target.closest(".item"), i = Number(it.dataset.i), A = L();
+    if(acc==="img"){ it.querySelector("[data-file]").click(); return; }
+    if(acc==="sinimg") A[i].img = "";
+    if(acc==="borra" && confirm("¿Quitar "+(A[i].nombre||"este logo")+"?")) A.splice(i,1);
+    if(acc==="sube" && i>0) [A[i-1],A[i]] = [A[i],A[i-1]];
+    if(acc==="baja" && i<A.length-1) [A[i+1],A[i]] = [A[i],A[i+1]];
+    pinta(); cambio();
+  });
+  cont.addEventListener("change", async e => {
+    if(!e.target.matches("[data-file]") || !e.target.files[0]) return;
+    const i = Number(e.target.closest(".item").dataset.i);
+    L()[i].img = await leerImagen(e.target.files[0]);
+    if(!L()[i].nombre) L()[i].nombre = e.target.files[0].name.replace(/\.[^.]+$/,"");
+    pinta(); cambio();
+  });
+  $("#addLogoM").onclick = () => { if(L().length>=6){ alert("Máximo 6 logos junto a CONTECS."); return; } L().push({nombre:"Nuevo logo", img:""}); pinta(); cambio(); };
+  pinta();
+})();
+
+
+/* ---------- vista previa ---------- */
+const PREVIAS = [
+  ["01 · Iniciando pronto","escena","inicio"],["02 · ¡Ya comenzamos!","escena","bienvenida"],
+  ["03 · Cámara 1 completa","marco","cam"],["04 · Cámara 2 completa","marco","cam"],
+  ["05 · Presentación + cámara","marco","pres1"],["06 · Cámara + presentación (invertido)","marco","pres1-inv"],
+  ["07 · Presentación + 2 cámaras","marco","pres2"],["08 · 2 cámaras + presentación (invertido)","marco","pres2-inv"],
+  ["09 · Dos cámaras lado a lado","marco","cams2"],["10 · Dos cámaras (invertido)","marco","cams2-inv"],
+  ["11 · Solo presentación","marco","pres"],["12 · Preguntas y respuestas","escena","preguntas"],
+  ["13 · Receso","escena","receso"],["14 · A continuación","escena","siguiente"],["15 · Agenda","escena","agenda"],
+  ["16 · Patrocinadores","escena","patrocinadores"],["17 · Dificultades técnicas","escena","tecnico"],["18 · Cierre","escena","cierre"]
+];
+$("#layoutPrev").innerHTML = PREVIAS.map(([n,t,v],i)=>`<option value="${i}">${esc(n)}</option>`).join("");
+$("#layoutPrev").value = "4";
+const ifr = $("#ifr");
+function cargaPrev(){
+  const [n,t,v] = PREVIAS[Number($("#layoutPrev").value)];
+  ifr.src = t==="escena" ? "escena.html?vivo=0&tipo=" + v : "marco.html?vivo=0&layout=" + v;
+  ifrPP.hidden = t==="escena" || !$("#verPP").checked;
+  if(t!=="escena") ifrPP.src = "ponencia.html?previa=1&vivo=0&b=" + bPrev();
+}
+function verPrevia(t, v){ const i = PREVIAS.findIndex(p=>p[1]===t && p[2]===v); if(i>=0){ $("#layoutPrev").value = String(i); cargaPrev(); } }
+$("#layoutPrev").onchange = cargaPrev;
+const ifrPP = $("#ifrPP");
+ifrPP.src = "ponencia.html?previa=1&vivo=0";
+function bPrev(){ return PREVIAS[Number($("#layoutPrev").value)][2] === "cam" ? 84 : 25; }
+ifr.onload = () => enviaPrev();
+ifrPP.onload = () => enviaPrev();
+$("#verPP").onchange = () => cargaPrev();
+function enviaPrev(){ const m = {tipo:"contecs-datos", datos:JSON.parse(JSON.stringify(D))};
+  try{ ifr.contentWindow.postMessage(m, "*"); }catch(e){} try{ ifrPP.contentWindow.postMessage(m, "*"); }catch(e){} }
+function escala(){ const k = `scale(${$("#cajaPrev").clientWidth/1920})`; ifr.style.transform = k; ifrPP.style.transform = k; }
+new ResizeObserver(escala).observe($("#cajaPrev"));
+let tPrev, tAuto; function cambio(){ sucio = true; $("#estado").textContent = handle ? "Guardando…" : "Cambios sin guardar"; $("#estado").style.color = "#fbbf24"; clearTimeout(tPrev); tPrev = setTimeout(enviaPrev, 250);
+  if(handle && $("#autoGuardar").checked){ clearTimeout(tAuto); tAuto = setTimeout(()=>escribir(true), 600); } }
+
+/* ---------- guardar ---------- */
+function generar(){
+  return "/* CONTECS 2026 · DATOS DE LOS OVERLAYS\n   Generado con panel.html el " + new Date().toLocaleString("es-PA") +
+         "\n   Los overlays abiertos en OBS se actualizan solos unos segundos después de guardar. */\nwindow.CONTECS = " + JSON.stringify(D, null, 2) + ";\n";
+}
+/* Guardado: se elige datos.js UNA vez; luego cada cambio se escribe solo (OBS lo lee en ~2 s).
+   El archivo elegido se recuerda entre sesiones (IndexedDB), solo pide confirmar el permiso. */
+function idb(){ return new Promise((ok,err)=>{ const r = indexedDB.open("contecs-config",1); r.onupgradeneeded=()=>r.result.createObjectStore("h"); r.onsuccess=()=>ok(r.result); r.onerror=err; }); }
+async function guardaHandle(h){ try{ const db = await idb(); db.transaction("h","readwrite").objectStore("h").put(h,"datos"); }catch(e){} }
+async function leeHandle(){ try{ const db = await idb(); return await new Promise(ok=>{ const q = db.transaction("h").objectStore("h").get("datos"); q.onsuccess=()=>ok(q.result||null); q.onerror=()=>ok(null); }); }catch(e){ return null; } }
+let escribiendo = false, pendiente = false;
+async function escribir(silencioso){
+  if(!handle) return guardar();
+  if(escribiendo){ pendiente = true; return; }
+  escribiendo = true;
+  try{
+    if((await handle.queryPermission({mode:"readwrite"})) !== "granted"){
+      if((await handle.requestPermission({mode:"readwrite"})) !== "granted") throw new Error("sin permiso");
+    }
+    const w = await handle.createWritable(); await w.write(generar()); await w.close();
+    sucio = false; $("#estado").textContent = "En vivo ✓ " + new Date().toLocaleTimeString("es-PA"); $("#estado").style.color = "#22c55e";
+  }catch(e){ console.warn(e); $("#estado").textContent = "Pulsa «Conectar datos.js» para guardar"; $("#estado").style.color = "#f87171"; }
+  escribiendo = false;
+  if(pendiente){ pendiente = false; escribir(true); }
+}
+async function guardar(){
+  const txt = generar();
+  try{
+    if(window.showSaveFilePicker){
+      if(!handle){ handle = await showSaveFilePicker({suggestedName:"datos.js", types:[{description:"datos.js", accept:{"text/javascript":[".js"]}}]}); guardaHandle(handle); }
+      $("#guardar").textContent = "Guardar ahora";
+      return escribir(false);
+    }
+  }catch(e){ if(e.name === "AbortError") return; console.warn(e); }
+  const a = document.createElement("a"); a.href = URL.createObjectURL(new Blob([txt],{type:"text/javascript"})); a.download = "datos.js"; a.click();
+  sucio = false; $("#estado").textContent = "Descargado: reemplaza datos.js en la carpeta de overlays"; $("#estado").style.color = "#22c55e";
+}
+$("#guardar").onclick = guardar;
+
+addEventListener("beforeunload", e => { if(sucio){ e.preventDefault(); e.returnValue = ""; } });
+
+
+/* ====================== PESTAÑAS ====================== */
+const LS = { get(k,d){ try{ return localStorage.getItem(k) ?? d; }catch(e){ return d; } }, set(k,v){ try{ localStorage.setItem(k,v); }catch(e){} } };
+function verTab(id){
+  document.querySelectorAll(".vista").forEach(v => v.hidden = v.id !== id);
+  document.querySelectorAll(".tabs button").forEach(b => b.classList.toggle("on", b.dataset.tab === id));
+  LS.set("panel.tab", id); if(id === "vConfig") setTimeout(escala, 50);
+}
+document.querySelectorAll(".tabs button").forEach(b => b.onclick = () => verTab(b.dataset.tab));
+
+/* ====================== OBS WebSocket v5 ====================== */
+class OBS {
+  constructor(){ this.ws=null; this.n=0; this.pend=new Map(); this.handlers={}; this.ok=false; }
+  on(ev,cb){ (this.handlers[ev] ||= []).push(cb); }
+  emit(ev,d){ (this.handlers[ev]||[]).forEach(cb=>cb(d)); }
+  async sha(t){ const h = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(t)); return btoa(String.fromCharCode(...new Uint8Array(h))); }
+  connect(url, pw){
+    return new Promise((res, rej) => {
+      try{ this.ws && this.ws.close(); }catch(e){}
+      this.ok=false;
+      const ws = this.ws = new WebSocket(url);
+      ws.onerror = () => rej(new Error("No se pudo conectar. ¿Está activado el servidor WebSocket en OBS?"));
+      ws.onclose = (e) => { this.ok=false; this.emit("close", e); if(e.code===4009) rej(new Error("Contraseña incorrecta.")); };
+      ws.onmessage = async (m) => {
+        const msg = JSON.parse(m.data);
+        if(msg.op === 0){
+          const d = {rpcVersion:1, eventSubscriptions: 4|16|64|128|1024};
+          if(msg.d.authentication){
+            if(!pw){ rej(new Error("OBS pide contraseña.")); ws.close(); return; }
+            const secret = await this.sha(pw + msg.d.authentication.salt);
+            d.authentication = await this.sha(secret + msg.d.authentication.challenge);
+          }
+          ws.send(JSON.stringify({op:1, d}));
+        } else if(msg.op === 2){ this.ok=true; res(); }
+        else if(msg.op === 7){
+          const p = this.pend.get(msg.d.requestId); if(!p) return; this.pend.delete(msg.d.requestId);
+          msg.d.requestStatus.result ? p.res(msg.d.responseData || {}) : p.rej(new Error(msg.d.requestStatus.comment || "Error de OBS"));
+        } else if(msg.op === 5){ this.emit(msg.d.eventType, msg.d.eventData || {}); }
+      };
+    });
+  }
+  call(requestType, requestData){
+    return new Promise((res, rej) => {
+      if(!this.ok) return rej(new Error("OBS no está conectado"));
+      const requestId = "r" + (++this.n);
+      this.pend.set(requestId, {res, rej});
+      this.ws.send(JSON.stringify({op:6, d:{requestType, requestId, requestData}}));
+      setTimeout(()=>{ if(this.pend.has(requestId)){ this.pend.delete(requestId); rej(new Error("Tiempo agotado")); } }, 5000);
+    });
+  }
+}
+const obs = new OBS();
+let escenas = [], programa = "", vista = "", estudio = false;
+function estadoConn(txt, cls){ const p=$("#stConn"); p.className="pill "+(cls||""); p.querySelector("span").textContent=txt; ppModo(); }
+function ppModo(){ $("#ppModo").textContent = obs.ok ? "al instante" : "sin OBS: se aplica al guardar"; }
+
+async function conectar(){
+  const url = $("#url").value.trim() || "ws://127.0.0.1:4455", pw = $("#pw").value;
+  LS.set("deck.url", url); LS.set("deck.pw", pw);
+  estadoConn("Conectando…"); $("#msgConn").textContent = "Conectando…";
+  try{
+    await obs.connect(url, pw);
+    estadoConn("OBS conectado","ok"); $("#conexion").hidden = true;
+    await cargarTodo();
+  }catch(e){ estadoConn("OBS sin conexión","err"); $("#conexion").hidden = false; $("#msgConn").textContent = e.message; }
+}
+obs.on("close", () => { estadoConn("OBS desconectado","err"); $("#conexion").hidden = false; setTimeout(()=>{ if(!obs.ok) conectar(); }, 3000); });
+$("#stConn").onclick = () => { verTab("vDeck"); $("#conexion").hidden = !$("#conexion").hidden; };
+$("#stConn").style.cursor = "pointer";
+
+async function cargarTodo(){
+  const l = await obs.call("GetSceneList");
+  escenas = l.scenes.slice().sort((a,b)=>b.sceneIndex-a.sceneIndex).map(s=>s.sceneName);
+  programa = l.currentProgramSceneName; vista = l.currentPreviewSceneName || "";
+  try{ estudio = (await obs.call("GetStudioModeEnabled")).studioModeEnabled; }catch(e){ estudio=false; }
+  pintaEscenas(); pintaTarjetas(); salidas();
+}
+
+/* Escenas */
+function pintaEscenas(){
+  $("#modoTxt").textContent = estudio ? "Modo estudio: el toque envía a vista previa" : "Toque = al aire";
+  $("#filaEstudio").hidden = !estudio;
+  $("#escenas").innerHTML = escenas.map((n,i)=>{
+    const m = n.match(/^(\d+)\s*[·.\-]\s*(.*)$/);
+    const num = m ? m[1] : String(i+1), t = m ? m[2] : n;
+    const cls = n===programa ? "prog" : (estudio && n===vista ? "prev" : "");
+    const tag = n===programa ? "AL AIRE" : (estudio && n===vista ? "PREVIA" : "");
+    return `<button class="key ${cls}" data-escena="${esc(n)}"><span class="n">${esc(num)}</span><span>${esc(t)}</span>${tag?`<span class="tag">${tag}</span>`:""}</button>`;
+  }).join("") || '<div class="vacio">Sin escenas.</div>';
+}
+$("#escenas").onclick = e => { const b = e.target.closest("[data-escena]"); if(b) irEscena(b.dataset.escena); };
+function irEscena(n){ obs.call(estudio ? "SetCurrentPreviewScene" : "SetCurrentProgramScene", {sceneName:n}).catch(console.warn); }
+obs.on("CurrentProgramSceneChanged", d => { programa = d.sceneName; pintaEscenas(); pintaTarjetas(); });
+obs.on("CurrentPreviewSceneChanged", d => { vista = d.sceneName; pintaEscenas(); pintaTarjetas(); });
+obs.on("StudioModeStateChanged", d => { estudio = d.studioModeEnabled; pintaEscenas(); });
+obs.on("SceneListChanged", () => cargarTodo());
+obs.on("SceneNameChanged", () => cargarTodo());
+$("#transicionar").onclick = () => obs.call("TriggerStudioModeTransition").catch(()=>{});
+async function transicion(tipo){
+  try{
+    const t = await obs.call("GetSceneTransitionList");
+    const tr = t.transitions.find(x => tipo==="corte" ? x.transitionKind==="cut_transition" : x.transitionKind==="fade_transition");
+    if(tr) await obs.call("SetCurrentSceneTransition", {transitionName: tr.transitionName});
+  }catch(e){ console.warn(e); }
+}
+$("#trCorte").onclick = () => transicion("corte");
+$("#trFade").onclick = () => transicion("fade");
+
+/* Tarjetas de nombre de la escena al aire */
+async function pintaTarjetas(){
+  const caja = $("#tarjetas"), escena = estudio && vista ? vista : programa;
+  $("#tarjEscena").textContent = escena ? "en «" + escena + "»" : "";
+  if(!obs.ok || !escena){ caja.innerHTML = '<div class="vacio">—</div>'; return; }
+  try{
+    const r = await obs.call("GetSceneItemList", {sceneName: escena});
+    const items = r.sceneItems.filter(i => /^Tarjeta/i.test(i.sourceName));
+    if(!items.length){ caja.innerHTML = '<div class="vacio">Esta escena no tiene tarjetas de nombre (están en 03, 04, 09 y 10).</div>'; return; }
+    caja.innerHTML = items.map(i => `<button class="key" data-item="${i.sceneItemId}" data-escena="${esc(escena)}"><span class="n">${i.sceneItemEnabled?"▶ visible":"lanzar"}</span><span>${esc(i.sourceName.replace(/^Tarjeta\s*/i,""))}</span></button>`).join("");
+  }catch(e){ caja.innerHTML = '<div class="vacio">'+esc(e.message)+'</div>'; }
+}
+$("#tarjetas").onclick = async e => {
+  const b = e.target.closest("[data-item]"); if(!b) return;
+  const d = {sceneName: b.dataset.escena, sceneItemId: Number(b.dataset.item)};
+  try{
+    await obs.call("SetSceneItemEnabled", {...d, sceneItemEnabled:false});
+    await new Promise(r=>setTimeout(r,150));
+    await obs.call("SetSceneItemEnabled", {...d, sceneItemEnabled:true});
+  }catch(err){ console.warn(err); }
+};
+obs.on("SceneItemEnableStateChanged", () => pintaTarjetas());
+
+/* Ponencia: con OBS conectado va al instante (evento al navegador de OBS); sin OBS, por datos.js */
+function eventoOBS(data){
+  return obs.call("CallVendorRequest", {vendorName:"obs-browser", requestType:"emit_event", requestData:{event_name:"contecs", event_data:data}});
+}
+async function ponenciaAccion(accion){
+  if(obs.ok){ try{ await eventoOBS({accion}); return; }catch(e){ console.warn(e); } }
+  D.ponenciaCmd = {accion, t:Date.now()}; enviaPrev();
+  handle ? escribir(true) : guardar();
+}
+$("#dkMostrar").onclick = () => ponenciaAccion("mostrar");
+$("#dkOcultar").onclick = () => ponenciaAccion("ocultar");
+
+function pintaDeckExpo(){
+  pintaDeckCuentas();
+  const dias = [...new Set(D.expositores.map(e=>e.dia).filter(Boolean))];
+  const dsel = $("#dkDia"), dv = dsel.value;
+  dsel.innerHTML = '<option value="">Todos los días</option>' + dias.map(d=>`<option ${d===dv?"selected":""}>${esc(d)}</option>`).join("");
+  dsel.hidden = !dias.length;
+  const q = ($("#dkBusca").value||"").toLowerCase().trim(), dia = dsel.value;
+  const L = D.expositores.filter(e => (!dia || e.dia===dia) && (!q || textoExpo(e).includes(q)));
+  $("#dkExpo").innerHTML = L.map(e => `<button class="exp ${String(e.id)===String(D.actual)?"sel":""}" data-id="${e.id}">
+      <b>#${e.id} · ${esc(e.nombre)}</b><small>${esc(e.tema)}${e.hora?" · "+esc(e.hora):""}${e.salon?" · "+esc(e.salon):""}</small></button>`).join("")
+      || '<div class="vacio">' + (D.expositores.length ? "Sin resultados." : "Agrega o importa expositores en ⚙ Configurar.") + '</div>';
+  const sel = $("#dkExpo .sel"); if(sel && !q) sel.scrollIntoView({block:"nearest"});
+}
+$("#dkBusca").oninput = pintaDeckExpo;
+$("#dkDia").onchange = pintaDeckExpo;
+function moverActual(d){
+  const dia = $("#dkDia").value, L = D.expositores.filter(e => !dia || e.dia===dia); if(!L.length) return;
+  const i = L.findIndex(e=>String(e.id)===String(D.actual));
+  const j = i<0 ? 0 : Math.min(L.length-1, Math.max(0, i+d));
+  setActual(Number(L[j].id));
+}
+$("#dkPrev").onclick = () => moverActual(-1);
+$("#dkNext").onclick = () => moverActual(1);
+function setActual(id){
+  D.actual = id;
+  const sel = $("#actual"); if(sel) sel.value = String(id);
+  pintaDeckExpo(); cambio();
+  if(obs.ok) eventoOBS({accion:"actual", id}).catch(console.warn);
+  $("#msgActual").textContent = handle ? "" : "pulsa «Conectar datos.js» para que quede guardada";
+}
+$("#dkExpo").onclick = e => { const b = e.target.closest("[data-id]"); if(b) setActual(Number(b.dataset.id)); };
+
+/* Transmisión / grabación */
+function armar(btn, accion){
+  if(btn.classList.contains("armado")){ btn.classList.remove("armado"); clearTimeout(btn._t); accion(); return; }
+  btn.classList.add("armado"); btn.textContent = "¿Seguro? toca otra vez";
+  btn._t = setTimeout(()=>{ btn.classList.remove("armado"); salidas(); }, 3000);
+}
+let streamOn=false, recOn=false;
+async function salidas(){
+  try{ streamOn = (await obs.call("GetStreamStatus")).outputActive; }catch(e){}
+  try{ recOn = (await obs.call("GetRecordStatus")).outputActive; }catch(e){}
+  $("#stStream").className = "pill " + (streamOn?"vivo":""); $("#stRec").className = "pill " + (recOn?"vivo":"");
+  const bs=$("#btnStream"), br=$("#btnRec");
+  if(!bs.classList.contains("armado")){ bs.textContent = streamOn ? "■ Detener transmisión" : "● Iniciar transmisión"; bs.className = "grande " + (streamOn?"rojo":""); }
+  if(!br.classList.contains("armado")){ br.textContent = recOn ? "■ Detener grabación" : "● Iniciar grabación"; br.className = "grande " + (recOn?"rojo":""); }
+}
+$("#btnStream").onclick = e => streamOn ? armar(e.currentTarget, ()=>obs.call("StopStream").catch(()=>{})) : obs.call("StartStream").catch(err=>alert(err.message));
+$("#btnRec").onclick = e => recOn ? armar(e.currentTarget, ()=>obs.call("StopRecord").catch(()=>{})) : obs.call("StartRecord").catch(err=>alert(err.message));
+obs.on("StreamStateChanged", salidas); obs.on("RecordStateChanged", salidas);
+
+/* Atajos (no se activan mientras escribes en un campo) */
+addEventListener("keydown", e => {
+  if((e.ctrlKey||e.metaKey) && e.key.toLowerCase()==="s"){ e.preventDefault(); guardar(); return; }
+  if(e.target.closest("input,textarea,select") || e.ctrlKey || e.metaKey || e.altKey) return;
+  if(/^[0-9]$/.test(e.key)){ const i = e.key==="0" ? 9 : Number(e.key)-1; if(escenas[i]) irEscena(escenas[i]); }
+  else if(e.key.toLowerCase()==="p") ponenciaAccion("mostrar");
+  else if(e.key.toLowerCase()==="o") ponenciaAccion("ocultar");
+  else if(e.key==="ArrowRight" || e.key.toLowerCase()==="n") moverActual(1);
+  else if(e.key==="ArrowLeft") moverActual(-1);
+  else if(e.key===" " && estudio){ e.preventDefault(); $("#transicionar").click(); }
+});
+
+$("#conectar").onclick = conectar;
+$("#pw").addEventListener("keydown", e => { if(e.key==="Enter") conectar(); });
+$("#url").value = LS.get("deck.url","ws://127.0.0.1:4455"); $("#pw").value = LS.get("deck.pw","");
+verTab(location.hash==="#configurar" ? "vConfig" : location.hash==="#vivo" ? "vDeck" : LS.get("panel.tab","vDeck"));
+ppModo();
+if(LS.get("deck.url",null)) conectar();
+
+pintaLogo(); pintaExpo(); pintaPatro(); pintaEscenasConfig(); pintaDeckCuentas(); cargaPrev(); escala();
+leeHandle().then(h => { if(h){ handle = h; $("#guardar").textContent = "Guardar ahora";
+  $("#estado").textContent = "datos.js recordado · se guardará solo al editar"; } });
+</script>
+</body>
+</html>
