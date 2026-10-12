@@ -112,34 +112,34 @@ function config(){
   return E;
 }
 
-let tCuenta = null, finCuenta = 0;
-function calcularFin(E, esReinicio){
-  // 1. Si hay hora exacta (ej. 14:30), siempre apuntamos a esa hora
-  if(E.hora){ 
-    const [h,m] = String(E.hora).split(":").map(Number); 
-    const f = new Date(); f.setHours(h||0, m||0, 0, 0); 
-    return f.getTime(); 
+let tCuenta = null, finCuenta = 0, claveCuenta = null;
+// El fin de la cuenta solo se recalcula cuando cambian SUS datos (min / hora / inicio),
+// así editar otra cosa en el panel (mensajes, expositores…) no la reinicia.
+function calcularFin(E){
+  const clave = JSON.stringify([E.min ?? "", E.hora ?? "", E.inicio ?? ""]);
+  if(clave === claveCuenta) return finCuenta;
+  const primera = claveCuenta === null;
+  claveCuenta = clave;
+  // 1. «Iniciar cuenta» en el panel (manda aunque la URL de OBS tenga &hora=)
+  if(E.inicio) return Number(E.inicio) + Number(E.min||0)*60000;
+  // 2. Hora exacta (ej. 14:30)
+  if(E.hora){
+    const [h,m] = String(E.hora).split(":").map(Number);
+    const f = new Date(); f.setHours(h||0, m||0, 0, 0);
+    return f.getTime();
   }
-  // 2. Si se pulsó el botón "Iniciar cuenta ahora" en el panel
-  if(E.inicio){
-    return Number(E.inicio) + Number(E.min||0)*60000;
-  }
-  // 3. Si se recargó datos.js y NO había un tiempo absoluto, reiniciamos la cuenta desde AHORA
-  if(esReinicio) {
-    return Date.now() + Number(E.min||0)*60000;
-  }
-  // 4. Comportamiento original al cargar la escena en OBS por primera vez
-  return cargaPagina + Number(E.min||0)*60000;
+  // 3. Al cargar la escena cuenta desde que se activó; si luego cambian los minutos, desde ahora
+  return (primera ? cargaPagina : Date.now()) + Number(E.min||0)*60000;
 }
 
-function render(esReinicio = false){
+function render(){
   UT.colores();
   const D = UT.D, E = config();
   marca($("#marca"));
   $("#chip").innerHTML = (tipo==="inicio"||tipo==="tecnico") ? '<span class="punto"></span>' + esc(D.fechas) : esc(D.hashtag);
   $("#tag").textContent = D.evento;
   $("#kicker").textContent = E.kicker || "";
-  $("#sub").textContent = E.sub \vert{}\vert{} ""; $("#sub").style.display = E.sub ? "" : "none";
+  $("#sub").textContent = E.sub || ""; $("#sub").style.display = E.sub ? "" : "none";
 
   // Título: palabras con animación escalonada; *texto* = color acento
   const tEl = $("#titulo"); tEl.innerHTML = ""; let k = 0;
@@ -160,9 +160,7 @@ function render(esReinicio = false){
 
   clearInterval(tCuenta);
   if(E.cuenta && (E.min || E.hora)){
-    // AQUÍ ESTÁ LA SOLUCIÓN: Calculamos el fin siempre que render() es llamado por un cambio.
-    finCuenta = calcularFin(E, esReinicio); 
-    
+    finCuenta = calcularFin(E);
     ex.innerHTML = '<div class="cuenta"><div class="caja"><div class="num" id="mm">00</div><div class="lab">MINUTOS</div></div><div class="caja"><div class="num" id="ss">00</div><div class="lab">SEGUNDOS</div></div></div>';
     const mm=$("#mm"), ss=$("#ss");
     const pinta=()=>{
@@ -195,14 +193,20 @@ function render(esReinicio = false){
   }
 }
 
-// Inicialización primera vez
-render(false);
+render();
 particulas($("#fx"));
 ticker($("#ticker"));
 
-// Listener para actualizaciones automáticas desde panel
-UT.vivo(() => render(true));
-UT.escuchaPrevia(() => render(true));
+UT.vivo(render);
+UT.escuchaPrevia(render);
+// Órdenes al instante desde el panel (OBS WebSocket), sin esperar a que se guarde datos.js
+UT.alEvento(d => {
+  if(d.accion === "cuenta" && d.escena === tipo){
+    const D = UT.D; D.escenas = D.escenas || {};
+    D.escenas[tipo] = d.datos || {};
+    render();
+  } else if(d.accion === "actual") render();
+});
 </script>
 </body>
 </html>
