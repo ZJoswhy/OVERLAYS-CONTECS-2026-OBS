@@ -359,7 +359,7 @@ $("#escEditor").addEventListener("click", e => {
   if(acc==="stop"){ delete o.inicio; }
   if(acc==="reset"){ D.escenas[escSel] = {}; }
   if(acc==="ver"){ verPrevia("escena", escSel); return; }
-  pintaEscenasConfig(); pintaDeckCuentas(); cambio();
+  pintaEscenasConfig(); pintaDeckCuentas(); cambio(); enviaCuenta(escSel);
 });
 
 /* Deck: cuentas rápidas */
@@ -371,7 +371,12 @@ function pintaDeckCuentas(){
 function iniciarCuenta(k, inp){
   const o = escData(k); if(inp.value!=="") o.min = Number(inp.value);
   o.inicio = Date.now(); delete o.hora; cambio(); if(escSel===k) pintaEscenasConfig();
-  if(!handle) $("#estado").textContent = "Pulsa «Conectar datos.js» para que OBS lo reciba";
+  enviaCuenta(k);
+  if(!handle && !obs.ok) $("#estado").textContent = "Pulsa «Conectar datos.js» para que OBS lo reciba";
+}
+/* Con OBS conectado, la cuenta llega al instante a las escenas abiertas; datos.js la conserva si se recargan */
+function enviaCuenta(k){
+  if(obs.ok) eventoOBS({accion:"cuenta", escena:k, datos:JSON.parse(JSON.stringify(escData(k)))}).catch(e=>console.warn(e));
 }
 $("#dkGoInicio").onclick = () => iniciarCuenta("inicio", $("#dkMinInicio"));
 $("#dkGoReceso").onclick = () => iniciarCuenta("receso", $("#dkMinReceso"));
